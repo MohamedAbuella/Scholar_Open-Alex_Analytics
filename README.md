@@ -1,6 +1,6 @@
 # OpenAlex Review Dashboard
 
-[![Live Dashboard Preview](https://shields.io)](https://github.io)
+[![Live Dashboard Preview](https://img.shields.io/badge/📊_Explore_Interactive_Dashboard-Click_Here-blue?style=for-the-badge)](https://github.io)
 
 A browser-based, client-side academic literature search and review dashboard powered by the free [OpenAlex API](https://openalex.org). It collects scholarly works for any search query or metadata filter, performs bibliometric profiling, NLP text mining, and Latent Dirichlet Allocation (LDA) topic modeling, and exports the highest-ranked papers as a clean `.bib` database.
 
