@@ -1,0 +1,998 @@
+@article{Markovics2022Comparison,
+  title = {Comparison of machine learning methods for photovoltaic power forecasting based on numerical weather prediction},
+  author = {Dávid Markovics and Martin János Mayer},
+  journal = {Renewable and Sustainable Energy Reviews},
+  year = {2022},
+  abstract = {The increase of the worldwide installed photovoltaic (PV) capacity and the intermittent nature of the solar resource highlights the importance of power forecasting for the grid integration of the technology. This study compares 24 machine learning models for deterministic day-ahead power forecasting based on numerical weather predictions (NWP), tested for two-year-long 15-min resolution datasets of 16 PV plants in Hungary. The effects of the predictor selection and the benefits of the hyperparameter tuning are also evaluated. The results show that the two most accurate models are kernel ridge regression and multilayer perceptron with an up to 44.6% forecast skill score over persistence. Supplementing the basic NWP data with Sun position angles and statistically processed irradiance values as the inputs of the learning models results in a 13.1% decrease of the root mean square error (RMSE), which underlines the importance of the predictor selection. The hyperparameter tuning is essential to exploit the full potential of the models, especially for the less robust models, which are prone to under or overfitting without proper tuning. The overall best forecasts have a 13.9% lower RMSE compared to the baseline scenario of using linear regression. Moreover, the power forecasts based on only daily average irradiance forecasts and the Sun position angles have only a 1.5% higher RMSE than the best scenario, which demonstrates the effectiveness of machine learning even for limited data availability. The results of this paper can support both researchers and practitioners in constructing the best data-driven techniques for NWP-based PV power forecasting.},
+  note = {Cited by 547 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.rser.2022.112364},
+}
+
+@article{Rajagukguk2020Review,
+  title = {A Review on Deep Learning Models for Forecasting Time Series Data of Solar Irradiance and Photovoltaic Power},
+  author = {Rial Arifin Rajagukguk and Raden A. A. Ramadhan and HyunJin Lee},
+  journal = {Energies},
+  year = {2020},
+  abstract = {Presently, deep learning models are an alternative solution for predicting solar energy because of their accuracy. The present study reviews deep learning models for handling time-series data to predict solar irradiance and photovoltaic (PV) power. We selected three standalone models and one hybrid model for the discussion, namely, recurrent neural network (RNN), long short-term memory (LSTM), gated recurrent unit (GRU), and convolutional neural network-LSTM (CNN–LSTM). The selected models were compared based on the accuracy, input data, forecasting horizon, type of season and weather, and training time. The performance analysis shows that these models have their strengths and limitations in different conditions. Generally, for standalone models, LSTM shows the best performance regarding the root-mean-square error evaluation metric (RMSE). On the other hand, the hybrid model (CNN–LSTM) outperforms the three standalone models, although it requires longer training data time. The most significant finding is that the deep learning models of interest are more suitable for predicting solar irradiance and PV power than other conventional machine learning models. Additionally, we recommend using the relative RMSE as the representative evaluation metric to facilitate accuracy comparison between studies.},
+  note = {Cited by 341 (OpenAlex)},
+  url = {https://doi.org/10.3390/en13246623},
+}
+
+@article{Assaf2023Review,
+  title = {A Review on Neural Network Based Models for Short Term Solar Irradiance Forecasting},
+  author = {Abbas Mohammed Assaf and Habibollah Haron and Haza Nuzly Abdull Hamed and Fuad Abdulgaleel Abdoh Ghaleb and Sultan Noman Qasem and Abdullah M. Albarrak},
+  journal = {Applied Sciences},
+  year = {2023},
+  abstract = {The accuracy of solar energy forecasting is critical for power system planning, management, and operation in the global electric energy grid. Therefore, it is crucial to ensure a constant and sustainable power supply to consumers. However, existing statistical and machine learning algorithms are not reliable for forecasting due to the sporadic nature of solar energy data. Several factors influence the performance of solar irradiance, such as forecasting horizon, weather classification, and performance evaluation metrics. Therefore, we provide a review paper on deep learning-based solar irradiance forecasting models. These models include Long Short-Term Memory (LTSM), Gated Recurrent Unit (GRU), Recurrent Neural Network (RNN), Convolutional Neural Network (CNN), Generative Adversarial Networks (GAN), Attention Mechanism (AM), and other existing hybrid models. Based on our analysis, deep learning models perform better than conventional models in solar forecasting applications, especially in combination with some techniques that enhance the extraction of features. Furthermore, the use of data augmentation techniques to improve deep learning performance is useful, especially for deep networks. Thus, this paper is expected to provide a baseline analysis for future researchers to select the most appropriate approaches for photovoltaic power forecasting, wind power forecasting, and electricity consumption forecasting in the medium term and long term.},
+  note = {Cited by 106 (OpenAlex)},
+  url = {https://doi.org/10.3390/app13148332},
+}
+
+@article{Almarzooqi2024hybrid,
+  title = {A hybrid machine-learning model for solar irradiance forecasting},
+  author = {Ameera M Almarzooqi and Maher Maalouf and Tarek H. M. EL-Fouly and Vasileios E. Katzourakis and Mohamed Shawky El Moursi and Constantinos V. Chrysikopoulos},
+  journal = {Clean Energy},
+  year = {2024},
+  abstract = {Abstract Nowcasting and forecasting solar irradiance are vital for the optimal prediction of grid-connected solar photovoltaic (PV) power plants. These plants face operational challenges and scheduling dispatch difficulties due to the fluctuating nature of their power output. As the generation capacity within the electric grid increases, accurately predicting this output becomes increasingly essential, especially given the random and non-linear characteristics of solar irradiance under variable weather conditions. This study presents a novel prediction method for solar irradiance, which is directly in correlation with PV power output, targeting both short-term and medium-term forecast horizons. Our proposed hybrid framework employs a fast trainable statistical learning technique based on the truncated-regularized kernel ridge regression model. The proposed method excels in forecasting solar irradiance, especially during highly intermittent weather periods. A key strength of our model is the incorporation of multiple historical weather parameters as inputs to generate accurate predictions of future solar irradiance values in its scalable framework. We evaluated the performance of our model using data sets from both cloudy and sunny days in Seattle and Medford, USA and compared it against three forecasting models: persistence, modified 24-hour persistence and least squares. Based on three widely accepted statistical performance metrics (root mean squared error, mean absolute error and coefficient of determination), our hybrid model demonstrated superior predictive accuracy in varying weather conditions and forecast horizons.},
+  note = {Cited by 72 (OpenAlex)},
+  url = {https://doi.org/10.1093/ce/zkad075},
+}
+
+@article{Hossain2020ShortTerm,
+  title = {Short-Term Photovoltaic Power Forecasting Using an LSTM Neural Network and Synthetic Weather Forecast},
+  author = {Mohammad Safayet Hossain and Hisham Mahmood},
+  journal = {IEEE Access},
+  year = {2020},
+  abstract = {In this paper, a forecasting algorithm is proposed to predict photovoltaic (PV) power generation using a long short term memory (LSTM) neural network (NN). A synthetic weather forecast is created for the targeted PV plant location by integrating the statistical knowledge of historical solar irradiance data with the publicly available type of sky forecast of the host city. To achieve this, a K-means algorithm is used to classify the historical irradiance data into dynamic type of sky groups that vary from hour to hour in the same season. In other words, the types of sky are defined for each hour uniquely using different levels of irradiance based on the hour of the day and the season. This can mitigate the performance limitations of using fixed type of sky categories by translating them into dynamic and numerical irradiance forecast using historical irradiance data. The proposed synthetic weather forecast is proved to embed the statistical features of the historical weather data, which results in a significant improvement in the forecasting accuracy. The performance of the proposed model is investigated using different intraday horizon lengths in different seasons. It is shown that using the synthetic irradiance forecast can achieve up to 33% improvement in accuracy in comparison to that when an hourly categorical type of sky forecast is used, and up to 44.6% in comparison to that when a daily type of sky forecast is used. This highlights the significance of utilizing the proposed synthetic forecast, and promote a more efficient utilization of the publicly available type of sky forecast to achieve a more reliable PV generation prediction. Moreover, the superiority of the LSTM NN with the proposed features is verified by investigating other machine learning engines, namely the recurrent neural network (RNN), the generalized regression neural network (GRNN) and the extreme learning machine (ELM).},
+  note = {Cited by 402 (OpenAlex)},
+  url = {https://doi.org/10.1109/access.2020.3024901},
+}
+
+@article{Zhen2020Deep,
+  title = {Deep Learning Based Surface Irradiance Mapping Model for Solar PV Power Forecasting Using Sky Image},
+  author = {Zhao Zhen and Jiaming Liu and Zhanyao Zhang and Fei Wang and Hua Chai and Yili Yu and Xiaoxing Lu and Tieqiang Wang and Yuzhang Lin},
+  journal = {IEEE Transactions on Industry Applications},
+  year = {2020},
+  abstract = {With the increase of solar photovoltaic (PV) penetration in power system, the impact of random fluctuation of PV power on the secure operation of power grid becomes more and more serious. High-precision PV power forecasting can effectively promote the grid's accommodation of PV power generation. Cloud is the most important factor affecting the surface irradiance and PV power. For the ultra-short-term solar PV power forecast considering the influence of cloud movement, it is necessary to be able to obtain the surface irradiance according to the sky cloud observation data. Therefore, in order to accurately achieve the real-time mapping relationship between sky image and surface irradiance, a hybrid mapping model based on deep learning applied for solar PV power forecasting is proposed in this article. First, the sky image data are clustered based on the feature extraction of convolutional autoencoder and K-means clustering algorithm after preprocess stage. Second, a hybrid mapping model based on deep learning methods are established for surface irradiance. Finally, the simulation results are compared and evaluated with different deep learning methods (CNN, LSTM, and ANN). The results show that the proposed model in this article has higher accuracy and can maintain robustness under different weather conditions.},
+  note = {Cited by 232 (OpenAlex)},
+  url = {https://doi.org/10.1109/tia.2020.2984617},
+}
+
+@article{Thaker2024Hybrid,
+  title = {Hybrid model for intra-day probabilistic PV power forecast},
+  author = {Jayesh Thaker and Robert Höller},
+  journal = {Renewable Energy},
+  year = {2024},
+  abstract = {Renewable generation forecasting has become an essential element of power system management because of the ever-increasing share of renewable power fed into the grid. Solar energy is one of the most common and well-known sources of energy in existing networks. Due to its intermittent and non-linear nature, accurate prediction of solar irradiance is essential for ensuring the reliable integration of photovoltaic (PV) plants with the grid system and for effectively managing supply and demand. The dispatching problem is typically addressed by generating a forecast for a few sample plants and scaling the result of these forecasts by the PV power generation capacity connected to the electric system. This research presents a comprehensive comparison of various methods for predicting PV power generation in fixed and single axis tracking PV systems at two different locations. These methods include time-series statistical regression, parametric physical approaches, machine learning (ML), and ensemble techniques, aimed at intra-day forecasts ranging from 1 to 6 h ahead. The study introduces a novel method for developing a parametric linear model for fixed PV systems and uses model output statistics (MOS) to improve forecast accuracy. Additionally, this study details various optimization algorithms designed to refine model parameters for creating a hybrid model. It also examines key factors influencing PV power forecasts and applies post-processing Kalman filter techniques. The study provides a detailed analysis of deterministic and probabilistic forecasting models, offering not just the most probable power production estimate, but also conveying the associated uncertainty. The results demonstrate a highly skilled ML based hybrid model to forecast PV power for different technologies at two different locations.},
+  note = {Cited by 67 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.renene.2024.121057},
+}
+
+@article{Wan2015Photovoltaic,
+  title = {Photovoltaic and solar power forecasting for smart grid energy management},
+  author = {Can Wan and Jian Zhao and Yonghua Song and Zhao Xu and Jin Yan Lin and Zechun Hu},
+  journal = {CSEE Journal of Power and Energy Systems},
+  year = {2015},
+  abstract = {Due to the challenge of climate and energy crisis, renewable energy generation including solar generation has experienced significant growth. Increasingly high penetration level of photovoltaic (PV) generation arises in smart grid. Solar power is intermittent and variable, as the solar source at the ground level is highly dependent on cloud cover variability, atmospheric aerosol levels, and other atmosphere parameters. The inherent variability of large-scale solar generation introduces significant challenges to smart grid energy management. Accurate forecasting of solar power/irradiance is critical to secure economic operation of the smart grid. This paper provides a comprehensive review of the theoretical forecasting methodologies for both solar resource and PV power. Applications of solar forecasting in energy management of smart grid are also investigated in detail.},
+  note = {Cited by 684 (OpenAlex)},
+  url = {https://doi.org/10.17775/cseejpes.2015.00046},
+}
+
+@article{Hendrikx2024imagingbased,
+  title = {All sky imaging-based short-term solar irradiance forecasting with Long Short-Term Memory networks},
+  author = {Niels Hendrikx and Khadija Barhmi and Lennard Visser and Thomas A. de Bruin and Mário Pó and Albert Ali Salah and Wilfried G.J.H.M. van Sark},
+  journal = {Solar Energy},
+  year = {2024},
+  abstract = {The intermittent nature of solar irradiance, primarily due to cloud movements, leads to rapid short-term fluctuations in the power output of photovoltaic (PV) systems. These fluctuations pose a significant challenge for integrating this renewable energy source into the power grid. Accurate forecasting of solar irradiance is not only crucial but also multi-beneficial. It enables more precise grid management by allowing operators to anticipate power output fluctuations and adjust energy distribution and storage strategies accordingly. This proactive approach reduces the reliance on backup power sources, which are often less sustainable and more expensive. Furthermore, accurate forecasts enhance the overall efficiency and reliability of energy systems by minimizing the impact of power variability on the grid, thereby supporting a more stable and sustainable energy supply. Addressing this need, our study focuses on the development of a forecasting model through innovative feature engineering, systematic design of specific attributes, and optimization of sequence length. The model is tailored to perform efficiently across various weather conditions and offers predictions for a time horizon of 0 to 20 min ahead. Utilizing a Long Short-Term Memory (LSTM) model, we achieve a remarkable ramp Forecast Skill Score of 39% in sunny and 25% in partially cloudy conditions. This work not only contributes to the existing literature but also presents a pioneering methodology for solar energy integration, highlighting the importance and application of accurate short-term solar irradiance forecasting.},
+  note = {Cited by 64 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.solener.2024.112463},
+}
+
+@article{Tercha2024Machine,
+  title = {Machine Learning-Based Forecasting of Temperature and Solar Irradiance for Photovoltaic Systems},
+  author = {Wassila Tercha and Sid Ahmed Tadjer and Fathia Chekired and Laurent Canale},
+  journal = {Energies},
+  year = {2024},
+  abstract = {The integration of photovoltaic (PV) systems into the global energy landscape has been boosted in recent years, driven by environmental concerns and research into renewable energy sources. The accurate prediction of temperature and solar irradiance is essential for optimizing the performance and grid integration of PV systems. Machine learning (ML) has become an effective tool for improving the accuracy of these predictions. This comprehensive review explores the pioneer techniques and methodologies employed in the field of ML-based forecasting of temperature and solar irradiance for PV systems. This article presents a comparative study between various algorithms and techniques commonly used for temperature and solar radiation forecasting. These include regression models such as decision trees, random forest, XGBoost, and support vector machines (SVM). The beginning of this article highlights the importance of accurate weather forecasts for the operation of PV systems and the challenges associated with traditional meteorological models. Next, fundamental concepts of machine learning are explored, highlighting the benefits of improved accuracy in estimating the PV power generation for grid integration.},
+  note = {Cited by 89 (OpenAlex)},
+  url = {https://doi.org/10.3390/en17051124},
+}
+
+@article{Iheanetu2022Solar,
+  title = {Solar Photovoltaic Power Forecasting: A Review},
+  author = {Kelachukwu Iheanetu},
+  journal = {Sustainability},
+  year = {2022},
+  abstract = {The recent global warming effect has brought into focus different solutions for combating climate change. The generation of climate-friendly renewable energy alternatives has been vastly improved and commercialized for power generation. As a result of this industrial revolution, solar photovoltaic (PV) systems have drawn much attention as a power generation source for varying applications, including the main utility-grid power supply. There has been tremendous growth in both on- and off-grid solar PV installations in the last few years. This trend is expected to continue over the next few years as government legislation and awareness campaigns increase to encourage a shift toward using renewable energy alternatives. Despite the numerous advantages of solar PV power generation, the highly variable nature of the sun’s irradiance in different seasons of various geopolitical areas/regions can significantly affect the expected energy yield. This variation directly impacts the profitability or economic viability of the system, and cannot be neglected. To overcome this challenge, various procedures have been applied to forecast the generated solar PV energy. This study provides a comprehensive and systematic review of recent advances in solar PV power forecasting techniques with a focus on data-driven procedures. It critically analyzes recent studies on solar PV power forecasting to highlight the strengths and weaknesses of the techniques or models implemented. The clarity provided will form a basis for higher accuracy in future models and applications.},
+  note = {Cited by 319 (OpenAlex)},
+  url = {https://doi.org/10.3390/su142417005},
+}
+
+@article{Khandakar2019Machine,
+  title = {Machine Learning Based Photovoltaics (PV) Power Prediction Using Different Environmental Parameters of Qatar},
+  author = {Amith Abdullah Khandakar and Muhammad E. H. Chowdhury and Monzure-Khoda Kazi and Kamel Benhmed and Farid Touati and Mohammed Abdulla E Al-Hitmi and Antonio S. P. Gonzales},
+  journal = {Energies},
+  year = {2019},
+  abstract = {Photovoltaics (PV) output power is highly sensitive to many environmental parameters and the power produced by the PV systems is significantly affected by the harsh environments. The annual PV power density of around 2000 kWh/m2 in the Arabian Peninsula is an exploitable wealth of energy source. These countries plan to increase the contribution of power from renewable energy (RE) over the years. Due to its abundance, the focus of RE is on solar energy. Evaluation and analysis of PV performance in terms of predicting the output PV power with less error demands investigation of the effects of relevant environmental parameters on its performance. In this paper, the authors have studied the effects of the relevant environmental parameters, such as irradiance, relative humidity, ambient temperature, wind speed, PV surface temperature and accumulated dust on the output power of the PV panel. Calibration of several sensors for an in-house built PV system was described. Several multiple regression models and artificial neural network (ANN)-based prediction models were trained and tested to forecast the hourly power output of the PV system. The ANN models with all the features and features selected using correlation feature selection (CFS) and relief feature selection (ReliefF) techniques were found to successfully predict PV output power with Root Mean Square Error (RMSE) of 2.1436, 6.1555, and 5.5351, respectively. Two different bias calculation techniques were used to evaluate the instances of biased prediction, which can be utilized to reduce bias to improve accuracy. The ANN model outperforms other regression models, such as a linear regression model, M5P decision tree and gaussian process regression (GPR) model. This will have a noteworthy contribution in scaling the PV deployment in countries like Qatar and increase the share of PV power in the national power production.},
+  note = {Cited by 193 (OpenAlex)},
+  url = {https://doi.org/10.3390/en12142782},
+}
+
+@article{Benitez2025comprehensive,
+  title = {A comprehensive review of machine learning applications in forecasting solar PV and wind turbine power output},
+  author = {Ian B. Benitez and Jai Govind Singh},
+  journal = {Journal of Electrical Systems and Information Technology},
+  year = {2025},
+  abstract = {Abstract With climate change driving the global push toward sustainable energy, the reliability of power systems increasingly depends on accurate forecasting methods. This study examined the role of machine learning (ML) in forecasting solar PV power output (SPVPO) and wind turbine power output (WTPO) and identified the challenges posed by the intermittent nature of these renewable energy sources. This study examined the current techniques, challenges, and future directions in ML-based forecasting of SPVPO and WTPO and proposed a standardized framework. Using the Mann–Whitney and Kruskal–Wallis tests, the results highlight the significant impact of key meteorological and operational variables on enhancing forecasting accuracy, as measured by MAPE and R-squared. Key features for SPVPO forecasting include solar irradiance, ambient temperature, and prior SPVPO, while wind speed, turbine speed, and prior wind power output are crucial for WTPO forecasting. Moreover, ensemble models, support vector machines, Gaussian processes, hybrid artificial neural networks, and decomposition-based hybrid models exhibit promising forecasting accuracy and reliability. Challenges such as data availability, complexity-interpretability trade-offs, and integration difficulties with energy management systems present opportunities for innovative solutions. These include exploring advanced data processing and calibration techniques, leveraging Big Data and IoT advancements, formulating advanced machine learning (ML) techniques, and employing probabilistic approaches with desirable accuracy and robustness in forecasting solar photovoltaic power output (SPVPO) and wind turbine power output (WTPO). Additionally, expanding research to ensure model generalizability across diverse climate conditions and forecasting horizons is crucial for enhancing the reliability and efficiency of renewable energy forecasting using machine learning techniques.},
+  note = {Cited by 43 (OpenAlex)},
+  url = {https://doi.org/10.1186/s43067-025-00239-4},
+}
+
+@article{Yang2014WeatherBased,
+  title = {A Weather-Based Hybrid Method for 1-Day Ahead Hourly Forecasting of PV Power Output},
+  author = {Hong‐Tzer Yang and Chao‐Ming Huang and Yann-Chang Huang and Yi-Shiang Pai},
+  journal = {IEEE Transactions on Sustainable Energy},
+  year = {2014},
+  abstract = {To improve real-time control performance and reduce possible negative impacts of photovoltaic (PV) systems, an accurate forecasting of PV output is required, which is an important function in the operation of an energy management system (EMS) for distributed energy resources. In this paper, a weather-based hybrid method for 1-day ahead hourly forecasting of PV power output is presented. The proposed approach comprises classification, training, and forecasting stages. In the classification stage, the self-organizing map (SOM) and learning vector quantization (LVQ) networks are used to classify the collected historical data of PV power output. The training stage employs the support vector regression (SVR) to train the input/output data sets for temperature, probability of precipitation, and solar irradiance of defined similar hours. In the forecasting stage, the fuzzy inference method is used to select an adequate trained model for accurate forecast, according to the weather information collected from Taiwan Central Weather Bureau (TCWB). The proposed approach is applied to a practical PV power generation system. Numerical results show that the proposed approach achieves better prediction accuracy than the simple SVR and traditional ANN methods.},
+  note = {Cited by 475 (OpenAlex)},
+  url = {https://doi.org/10.1109/tste.2014.2313600},
+}
+
+@article{Piantadosi2024Photovoltaic,
+  title = {Photovoltaic power forecasting: A Transformer based framework},
+  author = {Gabriele Piantadosi and Sofia Dutto and Antonio Galli and Saverio De Vito and Carlo Sansone and Girolamo Di Francia},
+  journal = {Energy and AI},
+  year = {2024},
+  abstract = {The accurate prediction of photovoltaic (PV) energy production is a crucial task to optimise the integration of solar energy into the power grid and maximise the benefit of renewable source trading in the energy market. This paper systematically and quantitatively analyses the literature by comparing different machine learning techniques and the impact of different meteorological forecast providers. The methodology consists of an irradiance model coupled with a meteorological provider; this combination removes the constraint of a local irradiance measurement. The result is a Transformer Neural Network architecture, trained and tested using OpenMeteo data, whose performance is superior to other combinations, providing a MAE of 1.22 kW (0.95%), and a MAPE of 2.21%. The implications of our study suggest that adopting a comprehensive approach, integrating local weather data, modelled irradiance, and PV plant configuration data, can significantly improve the accuracy of PV power forecasting, thus contributing to more effective technological and economic integration. • This work focuses on PV power output forecasting with ML. • PV power forecasting with ML models on various datasets to evaluate their efficacy. • Transformer model shows the lowest errors when forecasting PV power production.},
+  note = {Cited by 125 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.egyai.2024.100444},
+}
+
+@article{Thaker2022Comparative,
+  title = {A Comparative Study of Time Series Forecasting of Solar Energy Based on Irradiance Classification},
+  author = {Jayesh Thaker and Robert Höller},
+  journal = {Energies},
+  year = {2022},
+  abstract = {Sustainable energy systems rely on energy yield from renewable resources such as solar radiation and wind, which are typically not on-demand and need to be stored or immediately consumed. Solar irradiance is a highly stochastic phenomenon depending on fluctuating atmospheric conditions, in particular clouds and aerosols. The complexity of weather conditions in terms of many variable parameters and their inherent unpredictability limit the performance and accuracy of solar power forecasting models. As renewable power penetration in electricity grids increases due to the rapid increase in the installation of photovoltaics (PV) systems, the resulting challenges are amplified. A regional PV power prediction system is presented and evaluated by providing forecasts up to 72 h ahead with an hourly time resolution. The proposed approach is based on a local radiation forecast model developed by Blue Sky. In this paper, we propose a novel method of deriving forecast equations by using an irradiance classification approach to cluster the dataset. A separate equation is derived using the GEKKO optimization tool, and an algorithm is assigned for each cluster. Several other linear regressions, time series and machine learning (ML) models are applied and compared. A feature selection process is used to select the most important weather parameters for solar power generation. Finally, considering the prediction errors in each cluster, a weighted average and an average ensemble model are also developed. The focus of this paper is the comparison of the capability and performance of statistical and ML methods for producing a reliable hourly day-ahead forecast of PV power by applying different skill scores. The proposed models are evaluated, results are compared for different models and the probabilistic time series forecast is presented. Results show that the irradiance classification approach reduces the forecasting error by a considerable margin, and the proposed GEKKO optimized model outperforms other machine learning and ensemble models. These findings also emphasize the potential of ML-based methods, which perform better in low-power and high-cloud conditions, as well as the need to build an ensemble or hybrid model based on different ML algorithms to achieve improved projections.},
+  note = {Cited by 36 (OpenAlex)},
+  url = {https://doi.org/10.3390/en15082837},
+}
+
+@article{Aslam2022Advances,
+  title = {Advances in Solar PV Systems; A Comprehensive Review of PV Performance, Influencing Factors, and Mitigation Techniques},
+  author = {Adnan Aslam and Naseer Ahmed and Safian Ahmed Qureshi and Mohsen Assadi and Naveed Ahmed},
+  journal = {Energies},
+  year = {2022},
+  abstract = {PV power plants utilizing solar energy to generate electricity on a large scale has become a trend and a new option that has been adopted by many countries; however, in actuality, it is difficult to anticipate how much electricity PV plants will generate. This analysis of existing photovoltaic (PV) power plants provides guidelines for more precise designs and performance forecasting of other upcoming PV technologies. In the literature, some authors have put their efforts into reviewing studies on PV power systems; however, those reviews are too focused on specific aspects of the topic. This study will review, from a broader perspective, recent investigations on PV power systems in the literature that were published between 1990 and 2022. The present study is divided into three main parts. Firstly, a performance assessment review of PV power plants is presented by taking different performance parameters into consideration, which were developed by the “International Electrotechnical Commission (IEC 61724-1)”. These parameters include reference yield, final yield, performance ratio, capacity utilization factor, and system efficiency. Secondly, different identifying factors that were investigated in previous studies, and which affect PV performance, were considered. These factors include solar irradiance, PV technology type, ambient temperature, cell temperature, tilt angle, dust accumulation, and shading effect. Thirdly, different methods were adopted and suggested to counter the effects of these influencing factors to enhance the performance efficiency of the PV power system. A hybrid cooling and cleaning system can use active techniques to boost efficiency during high solar irradiances and ambient temperatures while depending on passive techniques for everyday operations. This comprehensive and critical review identifies the challenges and proposed solutions when using photovoltaic technologies and it will be helpful for researchers, designers, and investors dealing with PV power systems.},
+  note = {Cited by 144 (OpenAlex)},
+  url = {https://doi.org/10.3390/en15207595},
+}
+
+@article{Dhaked2023Power,
+  title = {Power output forecasting of solar photovoltaic plant using LSTM},
+  author = {Dheeraj Kumar Dhaked and Sharad Dadhich and Dinesh Birla},
+  journal = {Green Energy and Intelligent Transportation},
+  year = {2023},
+  abstract = {Renewable energy sources are gaining popularity, where solar photovoltaics (PV) being the most preferred option due to its cleanliness, affordability, and abundance. The energy output of solar PV is primarily based on temperature & irradiance. Therefore, a weather-based intelligent model is needed for estimating solar energy output to fulfil energy demand and decision making. Predicting PV power output is essential for energy management, security, and operation. In addition to enhancing the output efficiency of PV power plants, the power grid's stability can be enhanced by enhancing the efficacy of PV power plants' electricity generation. This work focuses on LSTM and BPNN for forecasting solar plant power output and it is observed that their findings are virtually compatible with realistic power production in terms of MAE, MAPE, RMSPE, and R2 score. LSTM model comparisons with different layers for each weather season are also analysed. Comparing the extent of errors in the LSTM and BPNN models reveals that LSTM provides more accurate predictions.},
+  note = {Cited by 146 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.geits.2023.100113},
+}
+
+@article{Wang2018Wavelet,
+  title = {Wavelet Decomposition and Convolutional LSTM Networks Based Improved Deep Learning Model for Solar Irradiance Forecasting},
+  author = {Fei Wang and Yili Yu and Zhanyao Zhang and Jie Li and Zhao Zhen and Kangping Li},
+  journal = {Applied Sciences},
+  year = {2018},
+  abstract = {Solar photovoltaic (PV) power forecasting has become an important issue with regard to the power grid in terms of the effective integration of large-scale PV plants. As the main influence factor of PV power generation, solar irradiance and its accurate forecasting are the prerequisite for solar PV power forecasting. However, previous forecasting approaches using manual feature extraction (MFE), traditional modeling and single deep learning (DL) models could not satisfy the performance requirements in partial scenarios with complex fluctuations. Therefore, an improved DL model based on wavelet decomposition (WD), the Convolutional Neural Network (CNN), and Long Short-Term Memory (LSTM) is proposed for day-ahead solar irradiance forecasting. Given the high dependency of solar irradiance on weather status, the proposed model is individually established under four general weather type (i.e., sunny, cloudy, rainy and heavy rainy). For certain weather types, the raw solar irradiance sequence is decomposed into several subsequences via discrete wavelet transformation. Then each subsequence is fed into the CNN based local feature extractor to automatically learn the abstract feature representation from the raw subsequence data. Since the extracted features of each subsequence are also time series data, they are individually transported to LSTM to construct the subsequence forecasting model. In the end, the final solar irradiance forecasting results under certain weather types are obtained via the wavelet reconstruction of these forecasted subsequences. This case study further verifies the enhanced forecasting accuracy of our proposed method via a comparison with traditional and single DL models.},
+  note = {Cited by 195 (OpenAlex)},
+  url = {https://doi.org/10.3390/app8081286},
+}
+
+@article{Kumar2020Solar,
+  title = {Solar irradiance resource and forecasting: a comprehensive review},
+  author = {Dhivya Sampath Kumar and Gokhan Mert Yagli and Monika Kashyap and Dipti Srinivasan},
+  journal = {IET Renewable Power Generation},
+  year = {2020},
+  abstract = {With the increase in demand for energy, penetration of alternative sources of energy in the power grid has increased. Photovoltaic (PV) energy is the most common and popular form of energy sources which is widely integrated into the existing grid. As solar energy is intermittent in nature, to ensure uninterrupted and reliable power supply to the prosumers, it is essential to forecast the solar irradiance. Accurate solar forecasting is necessary to facilitate large‐scale modelling and deployment of PV plants without disrupting the quality and reliability of the power grid as well as to manage the power demand and supply. There are various methods to predict the solar irradiance such as numerical weather prediction methods, satellite‐based approaches, cloud‐image based methodologies, data‐driven methods, and sensor‐network based approaches. This study gives an overall review of the different resources and methods used for forecasting solar irradiance in different time horizons and also gives an extensive review of the sensor networks that are used for determining solar irradiance. The various error metrics and accessible data sets available for the sensor networks are also discussed that can be used for validation purposes.},
+  note = {Cited by 197 (OpenAlex)},
+  url = {https://doi.org/10.1049/iet-rpg.2019.1227},
+}
+
+@article{Li2022Probabilistic,
+  title = {Probabilistic solar irradiance forecasting based on XGBoost},
+  author = {Xianglong Li and Longfei Ma and Ping Chen and Hui Xu and Qijing Xing and Jiahui Yan and Siyue Lu and Haohao Fan and Lei Yang and Yongqiang Cheng},
+  journal = {Energy Reports},
+  year = {2022},
+  abstract = {Solar energy has received increasing attention as renewable clean energy in recent years. Power grid operators and researchers widely value probabilistic solar irradiance forecasting because it can provide uncertainty measurement for future PV production. This paper proposes a probabilistic prediction model of solar irradiance based on XGBoost. Specifically, after data preprocessing, historical data is utilized for training a point prediction model based on XGBoost. Since XGBoost is obtained by minimizing the residuals of successive iterations of multiple trees, when predicting solar irradiance at a certain time in the future, these trees can generate multiple predicted values of irradiance iteratively. Finally, the kernel density estimation method is applied to transform the above prediction results in probability prediction intervals under different confidence levels. Experimental results on public data sets show that this method has better accuracy than other benchmark algorithms. The experiment also shows that the method proposed in this paper requires less training time and simple parameter adjustment, which is very suitable for application in engineering practice.},
+  note = {Cited by 148 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.egyr.2022.02.251},
+}
+
+@article{Behera2018Solar,
+  title = {Solar photovoltaic power forecasting using optimized modified extreme learning machine technique},
+  author = {Manoja Kumar Behera and Irani Majumder and Niranjan Nayak},
+  journal = {Engineering Science and Technology an International Journal},
+  year = {2018},
+  abstract = {Prediction of photovoltaic power is a significant research area using different forecasting techniques mitigating the effects of the uncertainty of the photovoltaic generation. Increasingly high penetration level of photovoltaic (PV) generation arises in smart grid and microgrid concept. Solar source is irregular in nature as a result PV power is intermittent and is highly dependent on irradiance, temperature level and other atmospheric parameters. Large scale photovoltaic generation and penetration to the conventional power system introduces the significant challenges to microgrid a smart grid energy management. It is very critical to do exact forecasting of solar power/irradiance in order to secure the economic operation of the microgrid and smart grid. In this paper an extreme learning machine (ELM) technique is used for PV power forecasting of a real time model whose location is given in the Table 1. Here the model is associated with the incremental conductance (IC) maximum power point tracking (MPPT) technique that is based on proportional integral (PI) controller which is simulated in MATLAB/SIMULINK software. To train single layer feed-forward network (SLFN), ELM algorithm is implemented whose weights are updated by different particle swarm optimization (PSO) techniques and their performance are compared with existing models like back propagation (BP) forecasting model.},
+  note = {Cited by 232 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.jestch.2018.04.013},
+}
+
+@article{Gupta2021power,
+  title = {PV power forecasting based on data-driven models: a review},
+  author = {Priya Gupta and Rhythm Singh},
+  journal = {International Journal of Sustainable Engineering},
+  year = {2021},
+  abstract = {Accurate PV power forecasting techniques are a prerequisite for the optimal management of the grid and its stability. This paper presents a review of the recent developments in the field of PV power forecasting, mainly focusing on the literature which uses ML techniques. The ML techniques (sub-branch of artificial intelligence) are extensively used due to their ability to solve nonlinear and complex data structures. PV power forecasting can either be direct, or indirect, which involves solar irradiance forecast model, plane of array irradiance estimation model, and PV performance model. This paper presents a review of both of these pathways of PV power forecasting based on the proposed methodology, forecast horizons and the considered input parameters. In case of unavailability of historical PV power for a new PV plant and in case of failure of real-time data acquisition, indirect PV power forecasting can be a viable alternative. Although the performance ranking of various ML models is complicated and no model is universal, recent studies suggest that methodologies like deep neural networks and ensemble or hybrid models outperform conventional methods for short-term PV forecasting. Recent articles also present the various intelligent optimisation and data-preparation techniques to improve performance accuracy.},
+  note = {Cited by 187 (OpenAlex)},
+  url = {https://doi.org/10.1080/19397038.2021.1986590},
+}
+
+@article{Wang2012ShortTerm,
+  title = {Short-Term Solar Irradiance Forecasting Model Based on Artificial Neural Network Using Statistical Feature Parameters},
+  author = {Fei Wang and Zengqiang Mi and Shi Su and Hongshan Zhao},
+  journal = {Energies},
+  year = {2012},
+  abstract = {Short-term solar irradiance forecasting (STSIF) is of great significance for the optimal operation and power predication of grid-connected photovoltaic (PV) plants. However, STSIF is very complex to handle due to the random and nonlinear characteristics of solar irradiance under changeable weather conditions. Artificial Neural Network (ANN) is suitable for STSIF modeling and many research works on this topic are presented, but the conciseness and robustness of the existing models still need to be improved. After discussing the relation between weather variations and irradiance, the characteristics of the statistical feature parameters of irradiance under different weather conditions are figured out. A novel ANN model using statistical feature parameters (ANN-SFP) for STSIF is proposed in this paper. The input vector is reconstructed with several statistical feature parameters of irradiance and ambient temperature. Thus sufficient information can be effectively extracted from relatively few inputs and the model complexity is reduced. The model structure is determined by cross-validation (CV), and the Levenberg-Marquardt algorithm (LMA) is used for the network training. Simulations are carried out to validate and compare the proposed model with the conventional ANN model using historical data series (ANN-HDS), and the results indicated that the forecast accuracy is obviously improved under variable weather conditions.},
+  note = {Cited by 317 (OpenAlex)},
+  url = {https://doi.org/10.3390/en5051355},
+}
+
+@article{Phan2022Novel,
+  title = {A Novel Forecasting Model for Solar Power Generation by a Deep Learning Framework With Data Preprocessing and Postprocessing},
+  author = {Quoc‐Thang Phan and Yuan‐Kang Wu and Quốc Dũng Phan and Hsin-Yen Lo},
+  journal = {IEEE Transactions on Industry Applications},
+  year = {2022},
+  abstract = {Photovoltaic power has become one of the most popular forms of energy owing to the growing consideration of environmental factors; however, solar power generation has brought many challenges for power system operations. With regard to optimizing safety and reducing the costs of power system operations, an accurate and reliable solar power forecasting model would be a significant step forward. This study proposes a deep learning method to improve the performance of short-term one-hour-ahead solar power forecasting, which includes data preprocessing, feature engineering, kernel principal component analysis, a gated recurrent unit network training mode based on time-of-day classification, and postprocessing with error correction. Both historical solar power, solar irradiance, and numerical weather prediction (NWP) data, such as temperature, irradiance, rainfall, wind speed, air pressure, and humidity, were used as the input dataset in this work. As a case study, the measured power from ten PV sites in Taiwan were collected and predicted with a one-hour resolution. The normalized root mean squared error and normalized mean absolute percent error were chosen to evaluate the performance of the forecasting models. Compared with other benchmark models, including ANN, LSTM, XGBoost, and single GRU, the experimental results showed the proposed model's superior performance. Furthermore, the importance of data preprocessing and postprocessing based on error correction was demonstrated.},
+  note = {Cited by 72 (OpenAlex)},
+  url = {https://doi.org/10.1109/tia.2022.3212999},
+}
+
+@article{Gbmou2021Comparative,
+  title = {A Comparative Study of Machine Learning-Based Methods for Global Horizontal Irradiance Forecasting},
+  author = {Shab Gbémou and Julien Eynard and Stéphane Thil and Emmanuel Guillot and Stéphane Grieu},
+  journal = {Energies},
+  year = {2021},
+  abstract = {The proliferation of photovoltaic (PV) power generation in power distribution grids induces increasing safety and service quality concerns for grid operators. The inherent variability, essentially due to meteorological conditions, of PV power generation affects the power grid reliability. In order to develop efficient monitoring and control schemes for distribution grids, reliable forecasting of the solar resource at several time horizons that are related to regulation, scheduling, dispatching, and unit commitment, is necessary. PV power generation forecasting can result from forecasting global horizontal irradiance (GHI), which is the total amount of shortwave radiation received from above by a surface horizontal to the ground. A comparative study of machine learning methods is given in this paper, with a focus on the most widely used: Gaussian process regression (GPR), support vector regression (SVR), and artificial neural networks (ANN). Two years of GHI data with a time step of 10 min are used to train the models and forecast GHI at varying time horizons, ranging from 10 min to 4 h. Persistence on the clear-sky index, also known as scaled persistence model, is included in this paper as a reference model. Three criteria are used for in-depth performance estimation: normalized root mean square error (nRMSE), dynamic mean absolute error (DMAE) and coverage width-based criterion (CWC). Results confirm that machine learning-based methods outperform the scaled persistence model. The best-performing machine learning-based methods included in this comparative study are the long short-term memory (LSTM) neural network and the GPR model using a rational quadratic kernel with automatic relevance determination.},
+  note = {Cited by 56 (OpenAlex)},
+  url = {https://doi.org/10.3390/en14113192},
+}
+
+@article{Wentz2022Solar,
+  title = {Solar Irradiance Forecasting to Short-Term PV Power: Accuracy Comparison of ANN and LSTM Models},
+  author = {Victor Hugo Wentz and Joylan Nunes Maciel and Jorge Javier Giménez Ledesma and Oswaldo Hideo Ando},
+  journal = {Energies},
+  year = {2022},
+  abstract = {The use of renewable energies, such as Photovoltaic (PV) solar power, is necessary to meet the growing energy consumption. PV solar power generation has intrinsic characteristics related to the climatic variables that cause intermittence during the generation process, promoting instabilities and insecurity in the electrical system. One of the solutions for this problem uses methods for the Prediction of Solar Photovoltaic Power Generation (PSPPG). In this context, the aim of this study is to develop and compare the prediction accuracy of solar irradiance between Artificial Neural Network (ANN) and Long-Term Short Memory (LSTM) network models, from a comprehensive analysis that simultaneously considers two distinct sets of exogenous meteorological input variables and three short-term prediction horizons (1, 15 and 60 min), in a controlled experimental environment. The results indicate that there is a significant difference (p < 0.001) in the prediction accuracy between the ANN and LSTM models, with better overall prediction accuracy skill for the LSTM models (MAPE = 19.5%), except for the 60 min prediction horizon. Furthermore, the accuracy difference between the ANN and LSTM models decreased as the prediction horizon increased, and no significant influence was observed on the accuracy of the prediction with both sets of evaluated meteorological input variables.},
+  note = {Cited by 93 (OpenAlex)},
+  url = {https://doi.org/10.3390/en15072457},
+}
+
+@article{Elsaraiti2022Solar,
+  title = {Solar Power Forecasting Using Deep Learning Techniques},
+  author = {Meftah Elsaraiti and Adel Merabet},
+  journal = {IEEE Access},
+  year = {2022},
+  abstract = {The recent rapid and sudden growth of solar photovoltaic (PV) technology presents a future challenge for the electricity sector agents responsible for the coordination and distribution of electricity given the direct dependence of this type of technology on climatic and meteorological conditions. Therefore, the development of models that allow reliable future prediction, in the short term, of solar PV generation will be of paramount importance, in order to maintain a balanced and comprehensive operation. This article discusses a method for predicting the generated power, in the short term, of photovoltaic power plants, by means of deep learning techniques. To fulfill the above, a deep learning technique based on the Long Short Term Memory (LSTM) algorithm is evaluated with respect to its ability to forecast solar power data. An evaluation of the performance of the LSTM network has been conducted and compared it with the Multi-layer Perceptron (MLP) network using: Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), Root Mean Squared Error (RMSE) and Coefficient of Determination (R2). The prediction result shows that the LSTM network gives the best results for each category of days. Thus, it provides reliable information that enables more efficient operation of photovoltaic power plants in the future. The binomial formed by the concepts of deep learning and energy efficiency seems to have a promising future, especially regarding promoting energy sustainability, decarburization, and the digitization of the electricity sector.},
+  note = {Cited by 274 (OpenAlex)},
+  url = {https://doi.org/10.1109/access.2022.3160484},
+}
+
+@article{Raza2018Ensemble,
+  title = {An Ensemble Framework for Day-Ahead Forecast of PV Output Power in Smart Grids},
+  author = {Muhammad Qamar Raza and N. Mithulananthan and Jiaming Li and Kwang Y. Lee and Hoay Beng Gooi},
+  journal = {IEEE Transactions on Industrial Informatics},
+  year = {2018},
+  abstract = {The uncertainty associated with solar photo-voltaic (PV) power output (PO) is a big challenge to design, manage and implement effective demand response, and management strategies. Therefore, an accurate PV power output forecast is an utmost importance to allow seamless integration and a higher level of penetration. In this research, a neural network ensemble (NNE) scheme is proposed, which is based on particle swarm optimization trained feedforward neural network (FNN). Five different FFN structures with varying network complexities are used to achieve the diverse and accurate forecast results. These results are combined using trim aggregation after removing the upper and lower forecast error extremes. Correlated variables namely wavelet transformed historical PO of PV, solar irradiance, wind speed, temperature, and humidity are applied as inputs to the multivariate NNE. Clearness index is used to classify days into clear, cloudy, and partial cloudy days. Test case studies are designed to predict the solar output for these days selected from all seasons. The performance of the proposed framework is analyzed by applying training dataset of different resolution, length, and quality from seven solar PV sites of the University of Queensland, Australia. The forecast results demonstrate that the proposed framework improves the forecast accuracy significantly in comparison with individual and benchmark models.},
+  note = {Cited by 106 (OpenAlex)},
+  url = {https://doi.org/10.1109/tii.2018.2882598},
+}
+
+@article{Zhang2018Solar,
+  title = {A Solar Time Based Analog Ensemble Method for Regional Solar Power Forecasting},
+  author = {Xinmin Zhang and Yuan Li and Siyuan Lu and Hendrik F. Hamann and Bri‐Mathias S. Hodge and Brad Lehman},
+  journal = {IEEE Transactions on Sustainable Energy},
+  year = {2018},
+  abstract = {This paper presents a new analog ensemble method for day-ahead regional photovoltaic (PV) power forecasting with hourly resolution. By utilizing open weather forecast and power measurement data, this prediction method is processed within a set of historical data with similar meteorological data (temperature and irradiance), and astronomical date (solar time and earth declination angle). Furthermore, clustering and blending strategies are applied to improve its accuracy in regional PV forecasting. The robustness of the proposed method is demonstrated with three different numerical weather prediction models, the North American mesoscale forecast system, the global forecast system, and the short-range ensemble forecast, for both region level and single site level PV forecasts. Using real measured data, the new forecasting approach is applied to the load zone in Southeastern Massachusetts as a case study. The normalized root mean square error has been reduced by 13.80% to 61.21% when compared with three tested baselines.},
+  note = {Cited by 229 (OpenAlex)},
+  url = {https://doi.org/10.1109/tste.2018.2832634},
+}
+
+@article{Rahimi2023Comprehensive,
+  title = {A Comprehensive Review on Ensemble Solar Power Forecasting Algorithms},
+  author = {Negar Rahimi and Sejun Park and Wonseok Choi and Byoungryul Oh and Sookyung Kim and Young-ho Cho and Sunghyun Ahn and Chulho Chong and Daewon Kim and Cheong Jin and Duehee Lee},
+  journal = {Journal of Electrical Engineering and Technology},
+  year = {2023},
+  abstract = {With increasing demand for energy, the penetration of alternative sources such as renewable energy in power grids has increased. Solar energy is one of the most common and well-known sources of energy in existing networks. But because of its non-stationary and non-linear characteristics, it needs to predict solar irradiance to provide more reliable Photovoltaic (PV) plants and manage the power of supply and demand. Although there are various methods to predict the solar irradiance. This paper gives the overview of recent studies with focus on solar irradiance forecasting with ensemble methods which are divided into two main categories: competitive and cooperative ensemble forecasting. In addition, parameter diversity and data diversity are considered as competitive ensemble forecasting and also preprocessing and post-processing are as cooperative ensemble forecasting. All these ensemble forecasting methods are investigated in this study. In the end, the conclusion has been drawn and the recommendations for future studies have been discussed.},
+  note = {Cited by 110 (OpenAlex)},
+  url = {https://doi.org/10.1007/s42835-023-01378-2},
+}
+
+@article{Lim2022Solar,
+  title = {Solar Power Forecasting Using CNN-LSTM Hybrid Model},
+  author = {Su-Chang Lim and Jun‐Ho Huh and Seok-Hoon Hong and Chul-Young Park and Jong-Chan Kim},
+  journal = {Energies},
+  year = {2022},
+  abstract = {Photovoltaic (PV) technology converts solar energy into electrical energy, and the PV industry is an essential renewable energy industry. However, the amount of power generated through PV systems is closely related to unpredictable and uncontrollable environmental factors such as solar radiation, temperature, humidity, cloud cover, and wind speed. Particularly, changes in temperature and solar radiation can substantially affect power generation, causing a sudden surplus or reduction in the power output. Nevertheless, accurately predicting the energy produced by PV power generation systems is crucial. This paper proposes a hybrid model comprising a convolutional neural network (CNN) and long short-term memory (LSTM) for stable power generation forecasting. The CNN classifies weather conditions, while the LSTM learns power generation patterns based on the weather conditions. The proposed model was trained and tested using the PV power output data from a power plant in Busan, Korea. Quantitative and qualitative evaluations were performed to verify the performance of the model. The proposed model achieved a mean absolute percentage error of 4.58 on a sunny day and 7.06 on a cloudy day in the quantitative evaluation. The experimental results suggest that precise power generation forecasting is possible using the proposed model according to instantaneous changes in power generation patterns. Moreover, the proposed model can help optimize PV power plant operations.},
+  note = {Cited by 284 (OpenAlex)},
+  url = {https://doi.org/10.3390/en15218233},
+}
+
+@article{Wu2024Multidimensional,
+  title = {Multidimensional Feature Extraction Based Minutely Solar Irradiance Forecasting Method Using All-Sky Images},
+  author = {Xinyue Wu and Zhao Zhen and Jianmei Zhang and Fei Wang and Fei Xu and Hui Ren and Ying Ming Su and Yong Sun and Heng Yang},
+  journal = {IEEE Transactions on Industry Applications},
+  year = {2024},
+  abstract = {With the increasing penetration of photovoltaic (PV) power generation in the grid, minutely irradiance prediction, which is the basis of minutely PV power prediction, has become very important. Aiming at the problems of extracting feature redundancy, weakening key area features, and high cloud-sky misidentification rate in the current minutely irradiance prediction, this paper proposes a minutely solar irradiance forecasting method based on multidimensional feature extraction using all-sky image, which is beneficial to achieve higher accuracy in solar power forecasting. First, the improved clustering-boundary correction algorithm is used to identify cloud and sky pixels and classify the all-sky images into four cloud-sky types. Then capture the sub images of the cloud domain that will cover the sun in the future dynamically according to the results of the cloud displacement vector calculation and extract local features and overall features as multidimensional features based on convolutional neural network (CNN) and image RGB matrix, respectively. Finally combined the multidimensional features with meteorological factors and historical irradiance to respectively construct irradiance mapping models for four cloud-sky types to achieve irradiance prediction on a ten-minute scale. Compared with the benchmarks, the mean absolute percentage error (MAPE) of the proposed method is reduced by 0.21%, 20.21%, 2.53%, and 5.30% for four cloud-sky types: clear sky, block clouds, thin clouds, and thick clouds, respectively. The proposed method can be widely used in PV plants equipped with all-sky imagers to provide data support for the optimal operation and maintenance of the plant.},
+  note = {Cited by 22 (OpenAlex)},
+  url = {https://doi.org/10.1109/tia.2024.3372515},
+}
+
+@article{Jiao2021Graph,
+  title = {A Graph Neural Network Based Deep Learning Predictor for Spatio-Temporal Group Solar Irradiance Forecasting},
+  author = {Xuan Jiao and Xingshuo Li and Dingyi Lin and Weidong Xiao},
+  journal = {IEEE Transactions on Industrial Informatics},
+  year = {2021},
+  abstract = {The fast growth of photovoltaic (PV) power generation raises the concern of grid instability due to its intermittent nature. Solar irradiance forecasting is becoming an effective way to support the power ramp rate control, mitigate power intermittency, and improve grid resilience. However, most previous research focuses on the predictor applied to the central PV farm but fails to fit the distributed PV system well. This article proposes a novel deep learning architecture, namely, group solar irradiance neural network, used for solar irradiance forecasting. The strategy adopts a convolutional graph neural network to mine distributed PVs’ graphs and identify the critical features. Meanwhile, the scheme includes a long-short-term memory recurrent neural network to capture the temporal correlations. The proposed solution shows an improved universality for model training and results in accurate and reliable predictions compared to other solutions. Furthermore, the learning architecture can be applied to the master–slave deployment scheme to reduce overall system cost. The proposed algorithm is tested with the data sourced from the U.S. National Renewable Energy Laboratory. The evaluation demonstrates the highest accuracy and best fitting for solar irradiance forecasting in comparison with other prediction methods.},
+  note = {Cited by 120 (OpenAlex)},
+  url = {https://doi.org/10.1109/tii.2021.3133289},
+}
+
+@article{Liu2017Forecasting,
+  title = {Forecasting Power Output of Photovoltaic System Using A BP Network Method},
+  author = {Luyao Liu and Diran Liu and Qie Sun and Hailong Li and Ronald Wennersten},
+  journal = {Energy Procedia},
+  year = {2017},
+  abstract = {The characteristics of intermittent and stochastic of solar energy has brought great challenges to power grid system in terms of operation and regulation. Power forecasting is an important factor for optimal schedule of power grid system and assessing the working performance of PV systems. In order to forecast the power output of a PV system located in Ashland at 24-hour-ahead for higher efficiency, a back propagation (BP) neural network model is proposed. Before designing the model, correlation analysis is done to investigate the relationship between power output and solar irradiance and ambient temperature, which are key parameters affecting the power output of PV systems. Based on a correlation analysis, the model admitted the following input parameters: hourly solar radiation intensity, the highest, the lowest daily and the average daily temperature, and hourly power output of the PV system. The output of the model is the forecasted PV power output 24 hours ahead. Based on the datasets, the neural network is trained to improve its accuracy. The best performance is obtained with the BP neural network structure of 28-20-11. The analysis of the error indicator MAPE shows that the proposed model has great accuracy and efficiency for forecasting the power output of photovoltaic systems.},
+  note = {Cited by 114 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.egypro.2017.12.126},
+}
+
+@article{Wu2014Novel,
+  title = {A Novel Hybrid Model for Short-Term Forecasting in PV Power Generation},
+  author = {Yuan‐Kang Wu and Chao-Rong Chen and Hasimah Abdul Rahman},
+  journal = {International Journal of Photoenergy},
+  year = {2014},
+  abstract = {The increasing use of solar power as a source of electricity has led to increased interest in forecasting its power output over short-time horizons. Short-term forecasts are needed for operational planning, switching sources, programming backup, reserve usage, and peak load matching. However, the output of a photovoltaic (PV) system is influenced by irradiation, cloud cover, and other weather conditions. These factors make it difficult to conduct short-term PV output forecasting. In this paper, an experimental database of solar power output, solar irradiance, air, and module temperature data has been utilized. It includes data from the Green Energy Office Building in Malaysia, the Taichung Thermal Plant of Taipower, and National Penghu University. Based on the historical PV power and weather data provided in the experiment, all factors that influence photovoltaic-generated energy are discussed. Moreover, five types of forecasting modules were developed and utilized to predict the one-hour-ahead PV output. They include the ARIMA, SVM, ANN, ANFIS, and the combination models using GA algorithm. Forecasting results show the high precision and efficiency of this combination model. Therefore, the proposed model is suitable for ensuring the stable operation of a photovoltaic generation system.},
+  note = {Cited by 121 (OpenAlex)},
+  url = {https://doi.org/10.1155/2014/569249},
+}
+
+@article{Huang2019Forecasting,
+  title = {Forecasting Hourly Solar Irradiance Using Hybrid Wavelet Transformation and Elman Model in Smart Grid},
+  author = {Xiaoqiao Huang and Junsheng Shi and Bixuan Gao and Yonghang Tai and Zaiqing Chen and Jun Zhang},
+  journal = {IEEE Access},
+  year = {2019},
+  abstract = {With the integration of photovoltaic (PV) power into an electrical network, the complexity of the grid management is increasing because of intermittent and fluctuation nature of solar energy. Solar irradiance forecasting is essential to facilitate planning and managing electricity generation and distribution in smart grid cyber-physical system (CPS). The performance of existing short-term forecasting methods is far from satisfactory due to a lack of reliable and fast time-frequency model for continuous-time solar irradiance data. To address this problem, this paper proposes a new method, Elman Neural Network (ENN) driven Wavelet Transform (WT-ENN), for hourly solar irradiance forecasting. Firstly, the solar irradiance series was decomposed into a set of constitutive series using wavelet transform. Secondly, the new wavelet coefficients were predicted by ENNs in every sub-series with the best network structure and parameters. Thirdly, Wavelet reconstruction will predict next hour solar irradiance through the aggregation of outputs of the ensemble of ENNs. Finally, the forecasting performance was evaluated using two large real-world solar irradiance datasets. Experiment results show that the new WT–ENN model outperforms a large number of alternative methods and an average forecast skill of 0.7590 over the persistence model. Thus, it is concluded that the proposed approach can significantly improve the forecasting accuracy and reliability.},
+  note = {Cited by 83 (OpenAlex)},
+  url = {https://doi.org/10.1109/access.2019.2943886},
+}
+
+@article{Wen2023regional,
+  title = {A regional solar forecasting approach using generative adversarial networks with solar irradiance maps},
+  author = {Haoran Wen and Yang Du and Xiaoyang Chen and Eng Gee Lim and Huiqing Wen and Ke Yan},
+  journal = {Renewable Energy},
+  year = {2023},
+  abstract = {The intermittent and stochastic nature of solar resource hinders the integration of solar energy into modern power system. Solar forecasting has become an important tool for better photovoltaic (PV) power integration, effective market design, and reliable grid operation. Nevertheless, most existing solar forecasting methods are dedicated to improving forecasting accuracy at site-level (e.g. for individual PV power plants) regardless of the impacts caused by the accumulated penetration of distributed PV systems. To tackle with this issue, this article proposes a novel generative approach for regional solar forecasting considering an entire geographical region of a flexible spatial scale. Specifically, we create solar irradiance maps (SIMs) for solar forecasting for the first time by using spatial Kriging interpolation with satellite-derived solar irradiance data. The sequential SIMs provide a comprehensive view of how solar intensity varies over time and are further used as the inputs for a multi-scale generative adversarial network (GAN) to predict the next-step SIMs. The generated SIM frames can be further transformed into PV power output through a irradiance-to-power model. A case study is conducted in a 24 × 24 km area of Brisbane to validate the proposed method by predicting of both solar irradiance and the output of behind-the-meter (BTM) PV systems at unobserved locations. The approach demonstrates comparable accuracy in terms of solar irradiance forecasting and better predictions in PV power generation compared to the conventional forecasting models with a highest average forecasting skill of 10.93±2.35% for all BTM PV systems. Thus, it can be potentially used to assist solar energy assessment and power system control in a highly-penetrated region.},
+  note = {Cited by 58 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.renene.2023.119043},
+}
+
+@article{Bekta2024DWTBILSTMbased,
+  title = {DWT-BILSTM-based models for day-ahead hourly global horizontal solar irradiance forecasting},
+  author = {Sibel Çevik Bektaş and İsmail H. Altaș},
+  journal = {Neural Computing and Applications},
+  year = {2024},
+  abstract = {Abstract Accurate forecasting of electricity generation from renewable energy sources is crucial for the operation, planning and management of smart grids. For reliable planning and operation of photovoltaic (PV) systems in grid-connected or islanded utilities, an hourly day-ahead forecast of PV output is critical. The forecast of PV power can be done indirectly by estimating solar irradiance. For forecasting day-ahead hourly global horizontal irradiance (GHI), two forecasting models with different multivariate inputs are proposed in this paper, and the results are compared. These models use a hybrid algorithm of discrete wavelet decomposition and bidirectional long short-term memory (BILSTM). The inputs of the first model contain GHI and weather type data. The other model allows for observation of the effect of meteorological values including GHI, temperature, humidity, wind speed, and weather type data. The forecasting performance of deep learning algorithms which contain recurrent neural network (RNN), long short-term memory (LSTM), and BILSTM algorithms for day ahead hourly solar irradiance forecasting problems are also compared. To evaluate the performance of proposed models, two datasets are used for Model 1 and one dataset is used for Model 2. An experiment is also done to demonstrate that the proposed Model 1 is applicable in datasets collected in the vicinity of the city of Trabzon. On the other hand, BILSTM algorithm outperforms RNN and LSTM algorithms. It is seen that the test successes of both proposed models are better than the results given in the literature.},
+  note = {Cited by 23 (OpenAlex)},
+  url = {https://doi.org/10.1007/s00521-024-09701-2},
+}
+
+@article{Sanjari2016Probabilistic,
+  title = {Probabilistic Forecast of PV Power Generation Based on Higher Order Markov Chain},
+  author = {Mohammad Javad Sanjari and Hoay Beng Gooi},
+  journal = {IEEE Transactions on Power Systems},
+  year = {2016},
+  abstract = {This paper presents a method to forecast the probability distribution function (PDF) of the generated power of PV systems based on the higher order Markov chain (HMC). Since the output power of the PV system is highly influenced by ambient temperature and solar irradiance, they are used as important features to classify different operating conditions of the PV system. The classification procedure is carried out by applying the pattern discovery method on the historical data of the mentioned variables. An HMC is developed based on the categorized historical data of PV power in each operating point. The 15-min ahead PDF of the PV output power is forecasted through the Gaussian mixture method (GMM) by combining several distribution functions and by using the coefficients defined based on parameters of the HMC-based model. In order to verify the proposed method, the genetic algorithm is applied to minimize a well-defined objective function to achieve the optimal GMM coefficients. Numerical tests using real data demonstrate that the forecast results follow the real probability distribution of the PV power well under different weather conditions.},
+  note = {Cited by 200 (OpenAlex)},
+  url = {https://doi.org/10.1109/tpwrs.2016.2616902},
+}
+
+@inproceedings{Anuradha2021Analysis,
+  title = {Analysis Of Solar Power Generation Forecasting Using Machine Learning Techniques},
+  author = {K. Anuradha and Deekshitha Erlapally and Gotlur Karuna and V. Srilakshmi and K. Adilakshmi},
+  booktitle = {E3S Web of Conferences},
+  year = {2021},
+  abstract = {Solar power is generated using photovoltaic (PV) systems all over the world. Because the output power of PV systems is alternating and highly dependent on environmental circumstances, solar power sources are unpredictable in nature. Irradiance, humidity, PV surface temperature, and wind speed are only a few of these variables. Because of the unpredictability in photovoltaic generating, it’s crucial to plan ahead for solar power generation as in solar power forecasting is required for electric grid. Solar power generation is weather-dependent and unpredictable, this forecast is complex and difficult. The impacts of various environmental conditions on the output of a PV system are discussed. Machine Learning (ML) algorithms have shown great results in time series forecasting and so can be used to anticipate power with weather conditions as model inputs. The use of multiple machine learning, Deep learning and artificial neural network techniques to perform solar power forecasting. Here in this regression models from machine learning techniques like support vector machine regressor, random forest regressor and linear regression model from which random forest regressor beaten the other two regression models with vast accuracy.},
+  note = {Cited by 62 (OpenAlex)},
+  url = {https://doi.org/10.1051/e3sconf/202130901163},
+}
+
+@article{Trong2023Shortterm,
+  title = {Short-term PV power forecast using hybrid deep learning model and Variational Mode Decomposition},
+  author = {Thanh Nguyen Trong and Huu Vu Xuan Son and Hieu Do Dinh and Hirotaka Takano and Tuyen Nguyen Duc},
+  journal = {Energy Reports},
+  year = {2023},
+  abstract = {In recent decades, the dramatic transformation from conventional energy to renewables, such as photovoltaic (PV), has been extensively occurred to address the increasing electricity demand and environmental issues. Nevertheless, the operation of PV systems is adversely affected by the intermittence of meteorological factors, such as solar irradiance. Therefore, accurate PV power generation forecast has played a vital role to stimulate the integration of renewable energy sources into the power grid. This study proposes a novel scheme for short-term PV power forecast based on Transformer Neural Network (TransNN) integrated with Convolutional Neural Network (CNN). In addition, Variational Mode Decomposition (VMD) is adopted in the data pre-processing stage to enhance the forecast accuracy. The performance of the proposed model is validated utilizing two real-world datasets, and five benchmark models are dedicated to forecast outcome comparison. The predicted results indicated the superiority of the proposed model compared to the referenced models by achieving the Mean Absolute Error (MAE) values under 1 kW in all cases.},
+  note = {Cited by 54 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.egyr.2023.05.154},
+}
+
+@article{Kumar2020Forecasting,
+  title = {Forecasting of solar and wind power using LSTM RNN for load frequency control in isolated microgrid},
+  author = {Dhananjay Kumar and Hitesh Datt Mathur and Surekha Bhanot and Ramesh Chand Bansal},
+  journal = {International Journal of Modelling and Simulation},
+  year = {2020},
+  abstract = {Renewable sources such as solar PV and wind are stochastic in nature, hence their integration with emerging isolated microgrid (MG) is challenging especially with regards to stability issues. An accurate prediction model of wind and solar sources is necessary to analyze the uncertainty in MG system and to encourage the reliable participation of wind and solar power in the energy market. The advancement in deep learning methods has made it possible to develop a multi-step forecasting model unlike shallow neural networks (SNNs). The time series forecasting using SNN and Recurrent Neural Network (RNN) suffers from the problem of vanishing/exploding gradient while training. To eliminate this problem the long short-term memory (LSTM) RNN has been used in this study for wind speed and solar irradiance prediction. The forecasted solar and wind power is applied to analyze the load frequency behavior and the response of nonrenewable sources for sudden rise and fall in load power demand and PI controller is used to mitigate frequency deviation to ensure the stability of the MG power system.},
+  note = {Cited by 138 (OpenAlex)},
+  url = {https://doi.org/10.1080/02286203.2020.1767840},
+}
+
+@article{Zhen2019Pattern,
+  title = {Pattern Classification and PSO Optimal Weights Based Sky Images Cloud Motion Speed Calculation Method for Solar PV Power Forecasting},
+  author = {Zhao Zhen and Shuaijie Pang and Fei Wang and Kangping Li and Zhigang Li and Hui Ren and Miadreza Shafie‐khah and João P. S. Catalào},
+  journal = {IEEE Transactions on Industry Applications},
+  year = {2019},
+  abstract = {The motion of cloud over a photovoltaic (PV) power station will directly cause the change of solar irradiance, which indirectly affects the prediction of minute-level PV power. Therefore, the calculation of cloud motion speed is very crucial for PV power forecasting. However, due to the influence of complex cloud motion process, it is very difficult to achieve accurate result using a single traditional algorithm. In order to improve the computation accuracy, a pattern classification and particle swarm optimization optimal weights based sky images cloud motion speed calculation method for solar PV power forecasting (PCPOW) is proposed. The method consists of two parts. First, we use a k-means clustering method and texture features based on a gray-level co-occurrence matrix to classify the clouds. Second, for different cloud classes, we build the corresponding combined calculation model to obtain cloud motion speed. Real data recorded at Yunnan Electric Power Research Institute are used for simulation; the results show that the cloud classification and optimal combination model are effective, and the PCPOW can improve the accuracy of displacement calculation.},
+  note = {Cited by 149 (OpenAlex)},
+  url = {https://doi.org/10.1109/tia.2019.2904927},
+}
+
+@article{Wang2017Exploring,
+  title = {Exploring Key Weather Factors From Analytical Modeling Toward Improved Solar Power Forecasting},
+  author = {Jianxiao Wang and Haiwang Zhong and Xiaowen Lai and Qing Li Xia and Yang Wang and Chongqing Kang},
+  journal = {IEEE Transactions on Smart Grid},
+  year = {2017},
+  abstract = {Accurate solar power forecasting plays a critical role in ensuring the reliable and economic operation of power grids. Most of existing literature directly uses available weather conditions as input features, which might ignore some key weather factors and the coupling among weather conditions. Therefore, a novel solar power forecasting approach is proposed in this paper by exploring key weather factors from photovoltaic (PV) analytical modeling. The proposed approach is composed of three engines: (1) analytical modeling of PV systems; (2) machine learning methods for mapping weather features with solar power; and (3) a deviation analysis for solar power forecast adjustment. In contrast to the existing research that directly uses available weather conditions, this paper explores the physical knowledge from PV models. Different irradiance components and PV cell temperatures are derived from PV analytical modeling. These weather features are used to reformulate the input of machine learning methods, which helps achieve a better forecasting performance. Moreover, based on the historical forecasting deviations, a compensation term is presented to adjust the solar power forecast. Case studies based on measured datasets from PV systems in Australia demonstrate that the forecasting performance can be highly improved by taking advantage of the key weather features derived from PV models.},
+  note = {Cited by 198 (OpenAlex)},
+  url = {https://doi.org/10.1109/tsg.2017.2766022},
+}
+
+@article{Sharda2020RSAM,
+  title = {RSAM: Robust Self-Attention Based Multi-Horizon Model for Solar Irradiance Forecasting},
+  author = {Swati Sharda and Mukhtiar Singh and Kapil Sharma},
+  journal = {IEEE Transactions on Sustainable Energy},
+  year = {2020},
+  abstract = {With the widespread adoption of renewable energy sources in the smart grid era, there is an utmost requirement to develop prediction models that can accurately forecast solar irradiance. The stochastic nature of solar irradiance considerably affects photo-voltaic (PV) power generation. Since weather conditions have a high impact on solar irradiance; therefore, we need weather-conscious forecasting models to boost predictive accuracy. Although Recurrent Neural Networks (RNNs) has shown considerable performance in time-series forecasting problems, its sequential nature prohibits parallelized computing. Recently, architectures based on self-attention mechanism have shown remarkable success in natural language programming (NLP), while being computationally superior. In this paper, we propose an RSAM (Robust Self-Attention Multi-horizon) forecasting architecture, which mainly works in two parts: First, multi-horizon forecasting of solar irradiance using multiple weather parameters; Second, prediction interval analysis for model robustness using quantile regression. A self-attention based Transformer model belonging to the family of deep learning models has been utilized for multi-variate solar time-series forecasting. Using the National Renewable Energy Laboratory (NREL) benchmark datasets of two different sites, we demonstrate that the proposed approach exhibit enhanced performance in comparison to RNN models in terms of RMSE, MAE, MBE, and Forecast skill at each forecasted interval.},
+  note = {Cited by 106 (OpenAlex)},
+  url = {https://doi.org/10.1109/tste.2020.3046098},
+}
+
+@article{Carneiro2021Review,
+  title = {Review on Photovoltaic Power and Solar Resource Forecasting: Current Status and Trends},
+  author = {Tatiane Carolyne Carneiro and Paulo César Marques de Carvalho and Heron Alves dos Santos and Marcello Anderson F. B. Lima and Arthur P. S. Braga},
+  journal = {Journal of Solar Energy Engineering},
+  year = {2021},
+  abstract = {Abstract Photovoltaic (PV) power intermittence impacts electrical grid security and operation. Precise PV power and solar irradiation forecasts have been investigated as significant reducers of such impacts. Predicting solar irradiation involves uncertainties related to the characteristics of time series and their high volatility due to the dependence on many weather conditions. We propose a systematic review of PV power and solar resource forecasting, considering technical aspects related to each applied methodology. Our review covers the performance analysis of various physical, statistical, and machine learning models. These methodologies should contribute to decision-making, being applicable to different sites and climatic conditions. About 42% of the analyzed articles developed hybrid approaches, 83% performed short-term prediction, and more than 78% had, as forecast goal, PV power, solar irradiance, and solar irradiation. Considering spatial forecast scale, 66% predicted in a single field. As a trend for the coming years, we highlight the use of hybridized methodologies, especially those that optimize input and method parameters without loss of precision and postprocessing methodologies aiming at improvements in individualized applications.},
+  note = {Cited by 78 (OpenAlex)},
+  url = {https://doi.org/10.1115/1.4051652},
+}
+
+@article{Chu2021Intrahour,
+  title = {Intra-hour irradiance forecasting techniques for solar power integration: A review},
+  author = {Yinghao Chu and Mengying Li and Carlos F.M. Coimbra and Daquan Feng and Huaizhi Wang},
+  journal = {iScience},
+  year = {2021},
+  abstract = {The ever-growing installation of solar power systems imposes severe challenges on the operations of local and regional power grids due to the inherent intermittency and variability of ground-level solar irradiance. In recent decades, solar forecasting methodologies for intra-hour, intra-day and day-ahead energy markets have been extensively explored as cost-effective technologies to mitigate the negative effects on the power grids caused by solar power instability. In this work, the progress in intra-hour solar forecasting methodologies are comprehensively reviewed and concisely summarized. The theories behind the forecasting methodologies and how these theories are applied in various forecasting models are presented. The reviewed mathematical tools include regressive methods, stochastic learning methods, deep learning methods, and genetic algorithm. The reviewed forecasting methodologies include data-driven methods, local-sensing methods, hybrid forecasting methods, and application orientated methods that generate probabilistic forecasts and spatial forecasts. Furthermore, suggestions to accelerate the development of future intra-hour forecasting methods are provided.},
+  note = {Cited by 108 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.isci.2021.103136},
+}
+
+@article{Dissawa2021ImageBased,
+  title = {Sky Image-Based Localized, Short-Term Solar Irradiance Forecasting for Multiple PV Sites via Cloud Motion Tracking},
+  author = {Lasanthika H. Dissawa and Roshan Indika Godaliyadda and Parakrama Ekanayake and Ashish Prakash Agalgaonkar and Duane Robinson and Janaka Bandara Ekanayake and Sarath Perera},
+  journal = {International Journal of Photoenergy},
+  year = {2021},
+  abstract = {Power generation through solar photovoltaics has shown significant growth in recent years. However, high penetration of solar PV creates power system operational issues as a result of solar PV variability and uncertainty. Short-term PV variability mainly occurs due to the intermittency of cloud cover. Therefore, to mitigate the effects of PV variability, a sky-image-based, localized, global horizontal irradiance forecasting model was introduced considering the individual cloud motion, cloud thicknesses, and the elevations of clouds above the ground level. The proposed forecasting model works independently of any historical irradiance measurements. Two inexpensive sky camera systems were developed and placed in two different locations to obtain sky images for cloud tracking and cloud-based heights. Then, irradiance values for onsite and for a PV site located with a distance of 2 km from the main camera were forecasted for 1 minute, 5 minutes, and 15 minutes ahead of real-time. Results show that the three-level cloud categorization and the individual cloud movement tracking method introduced in this paper increase the forecasting accuracy. For partially cloudy and sunny days, the forecasting model for 15 min forecasting time interval achieved a positive skill factor concerning the persistent model. The accuracy of determining the correct irradiance state for a 1 min forecasting time interval using the proposed model is 81%. The average measures of RMSE, MAE, and SF obtained using the proposed method for 15 min forecasting time horizon are 101 Wm-2, 64 Wm-2, and 0.26, respectively. These forecasting accuracy levels are much higher than the other benchmarks considered in this paper.},
+  note = {Cited by 29 (OpenAlex)},
+  url = {https://doi.org/10.1155/2021/9973010},
+}
+
+@article{Zhu2015Power,
+  title = {A Power Prediction Method for Photovoltaic Power Plant Based on Wavelet Decomposition and Artificial Neural Networks},
+  author = {Honglu Zhu and Xu Li and Qiao Sun and Ling Nie and Jianxi Yao and Gang Zhao},
+  journal = {Energies},
+  year = {2015},
+  abstract = {The power prediction for photovoltaic (PV) power plants has significant importance for their grid connection. Due to PV power’s periodicity and non-stationary characteristics, traditional power prediction methods based on linear or time series models are no longer applicable. This paper presents a method combining the advantages of the wavelet decomposition (WD) and artificial neural network (ANN) to solve this problem. With the ability of ANN to address nonlinear relationships, theoretical solar irradiance and meteorological variables are chosen as the input of the hybrid model based on WD and ANN. The output power of the PV plant is decomposed using WD to separated useful information from disturbances. The ANNs are used to build the models of the decomposed PV output power. Finally, the outputs of the ANN models are reconstructed into the forecasted PV plant power. The presented method is compared with the traditional forecasting method based on ANN. The results shows that the method described in this paper needs less calculation time and has better forecasting precision.},
+  note = {Cited by 154 (OpenAlex)},
+  url = {https://doi.org/10.3390/en9010011},
+}
+
+@article{Wei2025Ultra,
+  title = {Ultra Short-Term Solar Irradiance Forecast Based on Multimodal Data Fusion and Fuzzification},
+  author = {Xiangsen Wei and Dong Yue and Gerhard Petrus Hancke and Chunxia Dou and Houjun Li and Yang Qiu},
+  journal = {IEEE Transactions on Industrial Informatics},
+  year = {2025},
+  abstract = {The intermittency of solar irradiance is the main cause of rapid fluctuations in the power output of photovoltaic (PV) systems. These fluctuations hinder the large-scale integration of solar power generation equipment into the grid, which in turn hinders the process of utilizing solar energy resources to reduce carbon emissions. The main way to solve this dilemma is to achieve high-precision forecasting of solar irradiance. Although various methods exist to forecast the variations of solar irradiance, few focus on fully utilizing multimodal data information and fuzzy method to improve the forecasting performance. Therefore, a forecasting method combining multimodal data fusion and fuzzification is proposed to forecast ultra short-term global horizontal irradiance (GHI). First, a modal conversion method is designed to convert temporal modal data to spatial modal data. Then, the fused data are formed by fusing the converted data with normal and under exposure all-sky images. Subsequently, the fuzzy method is used to generate fuzzy GHI data with low nonlinear features. Last, we utilize deep neural networks to learn potential patterns between fused data and fuzzy GHI data in an end-to-end manner. Our method has been comprehensively validated on data provided by the National Renewable Energy Laboratory, demonstrating its effectiveness, and achieving the highest forecasting accuracy compared to state-of-the-art methods.},
+  note = {Cited by 28 (OpenAlex)},
+  url = {https://doi.org/10.1109/tii.2024.3523575},
+}
+
+@article{AlFaraj2024Solar,
+  title = {Solar Irradiance Database Comparison for PV System Design: A Case Study},
+  author = {Jamal AlFaraj and Emanuel Mihai Popovici and Paul Gavin Leahy},
+  journal = {Sustainability},
+  year = {2024},
+  abstract = {Effective design of solar photovoltaic (PV) systems requires accurate meteorological data for solar irradiance, ambient temperature, and wind speed. In this study, we aim to assess the reliability of satellite-based solar resource databases such as NASA, Solcast, and PVGIS by comparing them with ground-based measurements of global horizontal irradiance (GHI) from six locations in the Republic of Ireland. We compared satellite- and ground-based GHI data recorded between 2011 and 2012 and used Python-based packages to simulate solar power output for the six locations using both data types. The simulated outputs were then compared against metered power output from PV arrays at the sites. Ground-based GHI measurements demonstrate superior accuracy due to their acquisition at specific locations, offering increased spatial representativity. On the other hand, satellite GHI measurements, although reasonably accurate for many applications, cover broader regions with lower spatial resolution, leading to averaging effects that may not fully capture localized variations. This difference is reflected in the mean absolute percentage error (MAPE) values, with ground-simulated data showing low MAPE values, indicating strong alignment with reference observations, while satellite-simulated data exhibit a slightly higher MAPE, suggesting less precise estimates despite a strong correlation with ground-based measurements. This study demonstrates the relative reliability of satellite- and ground-based GHI data for accurate solar PV system design, emphasizing the practical implications for energy planners and engineers, and providing a strong enhancement for researchers working on forecasting solar energy yields using satellite databases. The Python-based PVLib package was utilized for the simulation, offering a robust framework for modeling and analyzing solar power systems, and its effectiveness in this context is discussed in detail.},
+  note = {Cited by 25 (OpenAlex)},
+  url = {https://doi.org/10.3390/su16156436},
+}
+
+@inproceedings{Phan2021Shortterm,
+  title = {Short-term Solar Power Forecasting Using XGBoost with Numerical Weather Prediction},
+  author = {Quoc‐Thang Phan and Yuan‐Kang Wu and Quốc Dũng Phan},
+  booktitle = {IEEE International Future Energy Electronics Conference (IFEEC)},
+  year = {2021},
+  abstract = {In recent years, solar photovoltaic (PV) generation becomes one of the most relevant energies. However, the intermittent characteristics of solar generation create significant problems to power system operations. To overcome this problem, many solar power forecasting techniques have been developed, and different forecasting horizons require different methodologies. For a short-term prediction, forecasting horizons generally require numerical weather prediction models (NWP) that provide an important estimation of weather variables such as solar irradiance, temperature, wind speed, rainfall, air pressure, etc. This research proposes a machine learning model based on Kernel Principal Component Analysis (PCA)- XGBoost to improve the accuracy of one-hour-ahead solar power forecasts. The model considered the deterministic Weather Research and Forecasting (WRFD) provided by Taiwan Central Weather Bureau (CWB). Furthermore, a XGBoost model was built on an ensemble of decision trees, providing important information and appropriate results in the forecasting process.},
+  note = {Cited by 50 (OpenAlex)},
+  url = {https://doi.org/10.1109/ifeec53238.2021.9661874},
+}
+
+@inproceedings{Alam2021Solar,
+  title = {Solar PV Power Forecasting Using Traditional Methods and Machine Learning Techniques},
+  author = {Ahmed Manavi Alam and Nahid Al-Masood and Iqbal Asif Razee and Mohammad Zunaed},
+  booktitle = {IEEE Kansas Power and Energy Conference (KPEC)},
+  year = {2021},
+  abstract = {The stability of the power sector has become uncertain due to the unpredictable characteristics of renewable energy sources such as solar photovoltaic (PV) power generation. It endangers the balance of the power system which is very sensitive to any mode of change and results in an ineffectiveness to match power consumption and production. The ultimate goal of harvesting renewable energy is to integrate it into the power grid. So, predicting the total amount of power generation by solar cells has become an important aspect. This study delineates various Convolutional Neural Network (CNN) techniques such as regular CNN, multi-headed CNN, and CNN-LSTM (CNN Long Short-Term Memory) which employs sliding window algorithm and other feature extraction and pre-processing techniques to make accurate predictions. Meteorological parameters such as Solar Irradiance, Air Temperature, Humidity, Wind Direction, and Wind Speed are related to the output of the solar panels. For instance, input parameters were taken for 5 years span and predicted for a particular day and one week. The results were evaluated by comparing them with traditional forecasting techniques such as Autoregressive Moving Average (ARMA) and Multiple Linear Regression (MLR). The efficacy of the result was also evaluated by the Evaluation Metrics such as RMSE, MAE, and MBE. Both traditional and machine learning techniques demonstrate the effectiveness in producing short-term and medium-term forecasting.},
+  note = {Cited by 32 (OpenAlex)},
+  url = {https://doi.org/10.1109/kpec51835.2021.9446199},
+}
+
+@article{Baran2025Machinelearningbased,
+  title = {Machine-learning-based probabilistic forecasting of solar irradiance in Chile},
+  author = {Sándor Baran and Julio César Marín and Omar Cuevas and Mailiu Díaz and Marianna Szabó and Orietta Nicolis and Mária Lakatos},
+  journal = {Advances in statistical climatology, meteorology and oceanography},
+  year = {2025},
+  abstract = {By the end of 2023, renewable sources covered 63.4 % of the total electric-power demand of Chile, and, in line with the global trend, photovoltaic (PV) power showed the most dynamic increase. Although Chile's Atacama Desert is considered to be the sunniest place on Earth, PV power production, even in this area, can be highly volatile. Successful integration of PV energy into the country's power grid requires accurate short-term PV power forecasts, which can be obtained from predictions of solar irradiance and related weather quantities. Nowadays, in weather forecasting, the state-of-the-art approach is the use of ensemble forecasts based on multiple runs of numerical weather prediction models. However, ensemble forecasts still tend to be uncalibrated or biased, thus requiring some form of post-processing. The present work investigates probabilistic forecasts of solar irradiance for regions III and IV in Chile. For this reason, eight-member short-term ensemble forecasts of solar irradiance for the calendar year 2021 are generated using the Weather Research and Forecasting (WRF) model; these are then calibrated using the benchmark ensemble model output statistics (EMOS) method based on a censored Gaussian law and its machine-learning-based distributional regression network (DRN) counterpart. Furthermore, we also propose a neural-network-based post-processing method, resulting in improved eight-member ensemble predictions. All forecasts are evaluated against station observations for 30 locations in the study area, and the skill of post-processed predictions is compared to the raw WRF ensemble. Our case study confirms that all studied post-processing methods substantially improve both the calibration of probabilistic forecasts and the accuracy of point forecasts. Among the methods tested, the corrected ensemble exhibits the best overall performance. Additionally, the DRN model generally outperforms the corresponding EMOS approach.},
+  note = {Cited by 12 (OpenAlex)},
+  url = {https://doi.org/10.5194/ascmo-11-89-2025},
+}
+
+@article{Brano2014Artificial,
+  title = {Artificial Neural Networks to Predict the Power Output of a PV Panel},
+  author = {Valerio Lo Brano and Giuseppina Ciulla and Mariavittoria Di Falco},
+  journal = {International Journal of Photoenergy},
+  year = {2014},
+  abstract = {The paper illustrates an adaptive approach based on different topologies of artificial neural networks (ANNs) for the power energy output forecasting of photovoltaic (PV) modules. The analysis of the PV module’s power output needed detailed local climate data, which was collected by a dedicated weather monitoring system. The Department of Energy, Information Engineering, and Mathematical Models of the University of Palermo (Italy) has built up a weather monitoring system that worked together with a data acquisition system. The power output forecast is obtained using three different types of ANNs: a one hidden layer Multilayer perceptron (MLP), a recursive neural network (RNN), and a gamma memory (GM) trained with the back propagation. In order to investigate the influence of climate variability on the electricity production, the ANNs were trained using weather data (air temperature, solar irradiance, and wind speed) along with historical power output data available for the two test modules. The model validation was performed by comparing model predictions with power output data that were not used for the network's training. The results obtained bear out the suitability of the adopted methodology for the short-term power output forecasting problem and identified the best topology.},
+  note = {Cited by 116 (OpenAlex)},
+  url = {https://doi.org/10.1155/2014/193083},
+}
+
+@inproceedings{Mittal2022Review,
+  title = {A Review on forecasting the photovoltaic power Using Machine Learning},
+  author = {Amit Kumar Mittal and Kirti Mathur and Shivangi Mittal},
+  booktitle = {Journal of Physics Conference Series},
+  year = {2022},
+  abstract = {Abstract In this review paper on different forecasting method of the solar power output for effective generation of the power grid and proper management of transfer rate of energy per unit area occurred into the solar PV system. Essential part in focusing the prediction of solar power is irradiance and temperature. The irradiance can be forecasted by many algorithm and method is applied in prediction of generation of Short-term photovoltaic power and long term solar power forecasting. And many papers describes on numerical weather forecasting and some algorithm like neural networks or support vector regression for two step approach for predicting the PV power. In this review shown that methods like Bagging Model, deep learning, genetic algorithm, random forest, gradient boosting and artificial neural network. We found that for enhancing the performance of predicting PV power many authors proposed the ensemble method that is the hybrid models of different algorithm. And I found that on this review process ensemble methods show that good results and improve the forecasting solar PV power.},
+  note = {Cited by 26 (OpenAlex)},
+  url = {https://doi.org/10.1088/1742-6596/2286/1/012010},
+}
+
+@article{Yu2019LSTM,
+  title = {An LSTM Short-Term Solar Irradiance Forecasting Under Complicated Weather Conditions},
+  author = {Yunjun Yu and Junfei Cao and Jianyong Zhu},
+  journal = {IEEE Access},
+  year = {2019},
+  abstract = {Complicated weather conditions lead to intermittent, random and volatility in photovoltaic (PV) systems, which makes PV predictions difficult. A recurrent neural network (RNN) is considered to be an effective tool for time-series data prediction. However, when the weather changes intensely, the long-term sequence of multivariate may cause gradient vanishing (exploding) during the training of RNN, leading the prediction results to local optimum. Long short-term memory (LSTM) network is the deep structure of RNN. Due to its special hidden layer unit structure, it can preserve the trend information contained in the long-term sequence, which is allowed to solve the problems of RNN and improve performance. An LSTM-based approach is applied for short-term predictions in this study based on a timescale that encompasses global horizontal irradiance (GHI) one hour in advance and one day in advance. Inaccurate forecasts usually occur on cloudy days, and the results of ANN and SVR in the literature prove this. To improve prediction accuracy on cloudy days, the clearness-index was introduced as an input data for the LSTM model and to classify the type of weather by k-means during the data processing, where cloudy days are classified as the cloudy and the mixed(partially cloudy). NN models are established to compare the accuracy of different approaches and the cross-regional study is to prove whether the method can be generalizable. From the results of hourly forecast, the R2coefficient of LSTM on cloudy days and mixed days is exceeding 0.9, while the R2of RNN is only 0.70 and 0.79 in Atlanta and Hawaii. From the results of daily forecast, All R2on cloudy days is about 0.85. However, the LSTM is still very effective in improving of RNN and more accurate than other models.},
+  note = {Cited by 328 (OpenAlex)},
+  url = {https://doi.org/10.1109/access.2019.2946057},
+}
+
+@article{Pierro2016Deterministic,
+  title = {Deterministic and Stochastic Approaches for Day-Ahead Solar Power Forecasting},
+  author = {Marco Pierro and Francesco Bucci and Matteo De Felice and Enrico Cesare Maggioni and Alessandro Perotto and Francesco Spada and David Moser and Cristina Cornaro},
+  journal = {Journal of Solar Energy Engineering},
+  year = {2016},
+  abstract = {Photovoltaic (PV) power forecasting has the potential to mitigate some of effects of resource variability caused by high solar power penetration into the electricity grid. Two main methods are currently used for PV power generation forecast: (i) a deterministic approach that uses physics-based models requiring detailed PV plant information and (ii) a data-driven approach based on statistical or stochastic machine learning techniques needing historical power measurements. The main goal of this work is to analyze the accuracy of these different approaches. Deterministic and stochastic models for day-ahead PV generation forecast were developed, and a detailed error analysis was performed. Four years of site measurements were used to train and test the models. Numerical weather prediction (NWP) data generated by the weather research and forecasting (WRF) model were used as input. Additionally, a new parameter, the clear sky performance index, is defined. This index is equivalent to the clear sky index for PV power generation forecast, and it is here used in conjunction to the stochastic and persistence models. The stochastic model not only was able to correct NWP bias errors but it also provided a better irradiance transposition on the PV plane. The deterministic and stochastic models yield day-ahead forecast skills with respect to persistence of 35% and 39%, respectively.},
+  note = {Cited by 63 (OpenAlex)},
+  url = {https://doi.org/10.1115/1.4034823},
+}
+
+@article{Moreno2020DayAhead,
+  title = {A Day-Ahead Irradiance Forecasting Strategy for the Integration of Photovoltaic Systems in Virtual Power Plants},
+  author = {Guillermo Moreno and Pedro Martín and Carlos Santos and Francisco Javier Rodriguez and Enrique Santiso},
+  journal = {IEEE Access},
+  year = {2020},
+  abstract = {Encouraged by the considerable cost reduction, small-scale solar power deployment has become a reality during the last decade. However, grid integration of small-scale photovoltaic (PV) solar systems still remains unresolved. High penetration of Renewable Energy Sources (RESs) results in technical challenges for grid operators. To address this, Virtual Power Plants (VPPs) have been defined and developed to manage distributed energy resources with the aim of facilitating the integration of RESs. This paper introduces a hybrid irradiance forecasting approach aimed at facilitating the integration of PV systems into a VPP, especially when a historical irradiance dataset is exiguous or non-existent. This approach is based on Artificial Neural Networks (ANNs) and a novel similar hour-based selection algorithm, has been tested for a real PV installation, and has been validated also considering irradiance measurements from an aggregation of ground-based meteorological stations, which emulate the nodes of a VPP. Under a reduced historical dataset, the results show that the proposed similar hour-based method produces the best forecasts with regard to those obtained by the ANN-based approach. This is particularly true for one-month and two-month datasets minimizing the mean error by 16.32% and 9.07% respectively. Finally, to demonstrate the potential of the proposed approach, a comparative analysis has been carried out between the hybrid method and the most used benchmarks in the literature, namely, the persistence method and the method based on similar days. It has been demonstrated conclusively that the proposed model yields promising results regardless the length of the historical dataset.},
+  note = {Cited by 34 (OpenAlex)},
+  url = {https://doi.org/10.1109/access.2020.3036140},
+}
+
+@article{Papatheofanous2022Deep,
+  title = {Deep Learning-Based Image Regression for Short-Term Solar Irradiance Forecasting on the Edge},
+  author = {Elissaios Alexios Papatheofanous and Vasileios Kalekis and Georgios Venitourakis and Filippos Tziolos and Dionysios I. Reisis},
+  journal = {Electronics},
+  year = {2022},
+  abstract = {Photovoltaic (PV) power production is characterized by high variability due to short-term meteorological effects such as cloud movements. These effects have a significant impact on the incident solar irradiance in PV parks. In order to control PV park performance, researchers have focused on Computer Vision and Deep Learning approaches to perform short-term irradiance forecasting using sky images. Motivated by the task of improving PV park control, the current work introduces the Image Regression Module, which produces irradiance values from sky images using image processing methods and Convolutional Neural Networks (CNNs). With the objective of enhancing the performance of CNN models on the task of irradiance estimation and forecasting, we propose an image processing method based on sun localization. Our findings show that the proposed method can consistently improve the accuracy of irradiance values produced by all the CNN models of our study, reducing the Root Mean Square Error by up to 10.44 W/m2 for the MobileNetV2 model. These findings indicate that future applications which utilize CNNs for irradiance forecasting should identify the position of the sun in the image in order to produce more accurate irradiance values. Moreover, the integration of the proposed models on an edge-oriented Field-Programmable Gate Array (FPGA) towards a smart PV park for the real-time control of PV production emphasizes their advantages.},
+  note = {Cited by 26 (OpenAlex)},
+  url = {https://doi.org/10.3390/electronics11223794},
+}
+
+@article{Fathi2025Enhanced,
+  title = {Enhanced global solar irradiance and temperature forecasting for rooftop PV power generation prediction using multi-step LSTM and GRU based hybrid models},
+  author = {Mohsen Fathi and Sevda Allahyari and Abolfazl Ahmadi and Alireza Zahedi and Sasan Asiaei},
+  journal = {Energy Conversion and Management X},
+  year = {2025},
+  abstract = {• Developed and evaluated LSTM-based, GRU-based, and MLP models to forecast solar power. • Conducted two scenarios; a one-year univariate forecast and a ten-year multivariate forecast for accurate comparison. • Evaluated the feasibility of a 319-kW rooftop solar photovoltaic system for a building with 2,300 m 2 roof area in Shiraz which has 1,260 MWh/year electrical load demand. • Predicted that the rooftop photovoltaic will generate 7.797 GWh of electricity from 2024 to 2033, that reducing LPSP and CO 2 emissions by 62% and 504.55 tons, respectively. The fluctuating and intermittent characteristics of solar radiation impose significant constraints on several applications. The precise predicting of solar irradiance is an important element in estimating the output power of a solar panel. The study assesses the viability of a rooftop solar photovoltaic system for a 2,300 square meter roof area of a hotel building and utilized monthly data from 1984 to 2023 and hybrid models comprising LSTM-based and GRU-based architectures, along with the MLP model and the standard forecasting methods, to forecast solar radiation and temperatures. Two different scenarios are examined, differing in forecasting horizon and input data type; scenario A features a one-year forecast horizon with univariate input data, while scenario B encompasses a ten-year forecast horizon with multivariate input data. The CNN-GRU model in scenario B demonstrates high accuracy relative to other models across two scenarios, utilizing six input parameters: solar radiation, temperature, wet bulb temperature, surface pressure, relative humidity, and surface temperature, along with two outputs: solar radiation and temperature. The RMSE and R 2 values were 0.0368 W/m 2 and 98.54 % for solar radiation, and 0.0445 °C and 97.69 % for temperature, respectively. As a result, the mean annually output power for the ten years from 2024 to 2033 is forecasted to be 779.7 MWh for the 319-kW rated power rooftop PV system. Also, the building load demand was calculated to be 1,260 MWh/year using Openstudio and energyPlus. Finally, with these characteristics, this production would cover about 62 % of the hotel annual load demand, and lower the LPSP from 1 to 0.38 and CO 2 emissions from 822.78 tons to 318.23 tons per year.},
+  note = {Cited by 11 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.ecmx.2025.101351},
+}
+
+@inproceedings{Tai2019Solar,
+  title = {Solar photovoltaic power output forecasting using machine learning technique},
+  author = {Dinh Van Tai},
+  booktitle = {Journal of Physics Conference Series},
+  year = {2019},
+  abstract = {Photovoltaic (PV) systems are used around the world to generate solar power. Solar power sources are irregular in nature due to the output power of PV systems being intermittent and depending greatly on environmental factors. These factors include, but are not limited to, irradiance, humidity, PV surface temperature, speed of the wind. Due to uncertainties in the photovoltaic generation, it is critical to precisely envisage the solar power generation. Solar power forecasting is necessary for supply and demand planning in an electric grid. This prediction is highly complex and challenging as solar power generation is weather-dependent and uncontrollable. This paper describes the effects of various environmental parameters on the PV system output. Prediction models based on Artificial Neural Networks (ANN) and regression models are evaluated for selective factors. The selection is done by using the correlation-based feature selection (CSF) and ReliefF techniques. The ANN model outperforms all other techniques that were discussed.},
+  note = {Cited by 35 (OpenAlex)},
+  url = {https://doi.org/10.1088/1742-6596/1327/1/012051},
+}
+
+@article{Lotfi2020Novel,
+  title = {A Novel Ensemble Algorithm for Solar Power Forecasting Based on Kernel Density Estimation},
+  author = {Mohamed Lotfi and Mohammad Sadegh Javadi and Gerardo J. Osório and Cláudio Monteiro and João P. S. Catalào},
+  journal = {Energies},
+  year = {2020},
+  abstract = {A novel ensemble algorithm based on kernel density estimation (KDE) is proposed to forecast distributed generation (DG) from renewable energy sources (RES). The proposed method relies solely on publicly available historical input variables (e.g., meteorological forecasts) and the corresponding local output (e.g., recorded power generation). Given a new case (with forecasted meteorological variables), the resulting power generation is forecasted. This is performed by calculating a KDE-based similarity index to determine a set of most similar cases from the historical dataset. Then, the outputs of the most similar cases are used to calculate an ensemble prediction. The method is tested using historical weather forecasts and recorded generation of a PV installation in Portugal. Despite only being given averaged data as input, the algorithm is shown to be capable of predicting uncertainties associated with high frequency weather variations, outperforming deterministic predictions based on solar irradiance forecasts. Moreover, the algorithm is shown to outperform a neural network (NN) in most test cases while being exceptionally faster (32 times). Given that the proposed model only relies on public locally-metered data, it is a convenient tool for DG owners/operators to effectively forecast their expected generation without depending on private/proprietary data or divulging their own.},
+  note = {Cited by 49 (OpenAlex)},
+  url = {https://doi.org/10.3390/en13010216},
+}
+
+@article{RamirezVergara2021Ambient,
+  title = {Ambient temperature and solar irradiance forecasting prediction horizon sensitivity analysis},
+  author = {Jose Ramirez-Vergara and Lisa Bosman and Walter D. Leon-Salas and Ebisa Wollega},
+  journal = {Machine Learning with Applications},
+  year = {2021},
+  abstract = {Selecting the correct weather forecasting technique is a crucial task when planning an efficient solar energy generation system. Estimating accurate solar photovoltaic systems power output depends on the correct modeling of solar irradiance and ambient temperature, evidencing the need for a framework to select the correct technique to forecast these parameters. This paper presents a review of the forecasting methods to predict solar irradiance and ambient temperature, considering the sensitivity to the forecasting horizon. The methodology includes estimating an interval for ambient temperature and solar irradiance by using the Mean Absolute Error as the percentage of variation in these parameters. To provide context, the study considers best-case and worst-case scenarios for four cities, estimating the power output for a sample array and analyzing the differences between the cases. The power output estimation of the PV array varied between 36% and 50% (on average) for the short-term prediction, and 54% to 95% for the long-term. The changes in the location produced an average variation of 43% in terms of power production, and up to 187% in economic value (USD) for the short term, and 44.5% and 187% for the long term. The results suggest a marked sensitivity to the variation in the forecasting horizon and significance with regards to location selection (considering the changes in solar irradiation and the cost of electricity).},
+  note = {Cited by 30 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.mlwa.2021.100128},
+}
+
+@inproceedings{Zhen2015based,
+  title = {SVM based cloud classification model using total sky images for PV power forecasting},
+  author = {Zhao Zhen and Fei Wang and Yujing Sun and Zengqiang Mi and Chun Liu and Bo Wang and Jing Lu},
+  booktitle = {IEEE Power & Energy Society Innovative Smart Grid Technologies Conference (ISGT)},
+  year = {2015},
+  abstract = {The accuracy of photovoltaic (PV) power forecasting decreases drastically under cloudy weather due to the rapid, violent and irregular fluctuation of solar irradiance. Therefore, to improve the accuracy of PV power forecasting, a detailed study on the influence of clouds in different movement and evolution patterns on solar irradiance is very necessary. The classification and recognition of different kinds of clouds are the basic of the study on the effect between the cloud and irradiance. A Support Vector Machine (SVM) based cloud classification model using the high temporal and spatial resolution sky images captured via the total sky imager installed in the PV plant is established in this paper. Firstly, the influence on irradiance under clouds of different shapes and distributions in a sky image is analyzed and four different classes of clouds are distinguished taking into account the meteorology standard as well as the preceding analysis. Secondly, the spectral and textural features are extracted by the statistical tonal analysis and gray level cooccurrence matrix (GLCM) of the sky image. Finally, a c-support vector classification (C-SVC) model with radial basis function (RBF) kernel function is built to classify the different clouds in the sky images. The experimental results show that the proposed SVM model can make reasonable classification and efficient identification for the various clouds in the sky images of PV plant.},
+  note = {Cited by 54 (OpenAlex)},
+  url = {https://doi.org/10.1109/isgt.2015.7131784},
+}
+
+@article{Pospchal2022Solar,
+  title = {Solar Irradiance Forecasting with Transformer Model},
+  author = {Jiří Pospíchal and Martin Kubovčík and Iveta Dirgová Ľuptáková},
+  journal = {Applied Sciences},
+  year = {2022},
+  abstract = {Solar energy is one of the most popular sources of renewable energy today. It is therefore essential to be able to predict solar power generation and adapt energy needs to these predictions. This paper uses the Transformer deep neural network model, in which the attention mechanism is typically applied in NLP or vision problems. Here, it is extended by combining features based on their spatiotemporal properties in solar irradiance prediction. The results were predicted for arbitrary long-time horizons since the prediction is always 1 day ahead, which can be included at the end along the timestep axis of the input data and the first timestep representing the oldest timestep removed. A maximum worst-case mean absolute percentage error of 3.45% for the one-day-ahead prediction was obtained, which gave better results than the directly competing methods.},
+  note = {Cited by 49 (OpenAlex)},
+  url = {https://doi.org/10.3390/app12178852},
+}
+
+@article{Sameera2024Analysis,
+  title = {Analysis of the impact of irradiance, temperature and tilt angle on the performance of grid-connected solar power plant},
+  author = {Sameera and Mohd Tariq and Mohd Rihan},
+  journal = {Measurement Energy},
+  year = {2024},
+  abstract = {In order to maximize the solar radiations falling on a Photo-voltaic (PV) panel and hence, to maximize the solar power generation, an optimum tilt angle of the PV panels for a specific geographic location plays a critical role. This paper exploits the tilt angle and establishes an empirical relation among optimum tilt angle, module temperature and ambient temperature. Moreover, estimating accurate solar photovoltaic power output depends on the correct modelling of the PV module. Temperature and irradiance dependent modelling need statistical support for their behaviour and pattern. This work also examines and institutes the relationship between Ambient temperature and Module temperature throughout the year. Furthermore, in order to determine the impact of irradiance, ambient temperature and module temperature on the solar power generation of a grid-connected solar power plant, this paper evaluates Karl Pearson correlation coefficients for each of the following three pairs (1) generation and irradiance (2) generation and ambient temperature and (3) generation and module temperature, for all the 12 months of a year. The results obtained shall help to better understand, manage, plan, forecast and stabilize the solar power output. Earlier researchers usually used weather data for their study, which are not location-specific therefore, accuracy is questionable. Hence, the data used in this research is recorded from a 3.3 MWp grid-tied ground-installed solar power plant and a 119 KW grid-tied rooftop-installed solar power plant, both located at Aligarh Muslim University, Aligarh, India. This paper presents an exhaustive analysis of the two grid-tied solar power plants as there is very little work with actual data of generation, irradiance, temperature and tilt angle, all measured on the spot with high accuracy; results obtained are realistic with a novel approach.},
+  note = {Cited by 17 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.meaene.2024.100007},
+}
+
+@inproceedings{Phan2022Novel,
+  title = {A Novel Forecasting Model for Solar Power Generation by a Deep Learning Framework with Data Preprocessing and Postprocessing},
+  author = {Quoc‐Thang Phan and Yuan‐Kang Wu and Quốc Dũng Phan and Hsin-Yen Lo},
+  booktitle = {IEEE/IAS Industrial and Commercial Power Systems Technical Conference},
+  year = {2022},
+  abstract = {Photovoltaic power has become one of the most popular energy due to environmental factors. However, solar power generation has brought many challenges for power system operations. To optimize safety and reduce costs of power system operations, an accurate and reliable solar power forecasting model is significance. This study proposes a deep learning method to improve the performance of short-term solar power forecasting, which includes data preprocessing, feature engineering, Kernel Principal Component Analysis, Gated Recurrent Unit Network training mode based on time of the day classification, and post processing with error correction. Both historical solar power, solar irradiance, and Numerical Weather Prediction (NWP) data, such as temperature, irradiance, rainfall, wind speed, air pressure, humidity, are considered as input dataset in this work. As a case study, the measured solar power data from ten solar sites in Taiwan are forecasted for the next day PV power outputs with one-hour resolution. The error index such as Normalized Root Mean Squared Error (NRMSE), Normalized Mean Absolute Percent Error (NMAPE) are chosen to evaluate the performance of forecasting models. Compared with other benchmark models including ANN, LSTM, XGBoost, and single GRU, the experimental results by the proposed forecasting model show its high performance. Furthermore, the proposed model also demonstrates the importance of data preprocessing and post processing based on error correction.},
+  note = {Cited by 10 (OpenAlex)},
+  url = {https://doi.org/10.1109/icps54075.2022.9773862},
+}
+
+@article{Shakya2016Solar,
+  title = {Solar Irradiance Forecasting in Remote Microgrids Using Markov Switching Model},
+  author = {Ayush Shakya and Semhar Michael and Christopher P. Saunders and Douglas E. Armstrong and Prakash Pandey and Santosh Chalise and Reinaldo Tonkoski},
+  journal = {IEEE Transactions on Sustainable Energy},
+  year = {2016},
+  abstract = {Photovoltaic (PV) systems integration is increasingly being used to reduce fuel consumption in diesel-based remote microgrids. However, uncertainty and low correlation of PV power availability with load reduces the benefits of PV integration. These challenges can be handled by introducing reserve. However, this leads to increased operational cost. Solar irradiance forecasting helps to reduce reserve requirement, thereby improving the utilization of PV energy. This paper presents a new solar irradiance forecasting method for remote microgrids based on the Markov switching model. This method uses locally available data to predict one-day-ahead solar irradiance for scheduling energy resources in remote microgrids. The model considers past solar irradiance data, clear sky irradiance, and Fourier basis expansions to create linear models for three regimes or states: high, medium, and low energy regimes for days corresponding to sunny, mildly cloudy, and extremely cloudy days, respectively. The case study for Brookings, SD, USA, discussed in this paper, resulted in an average mean absolute percentage error of 31.8% for five years, from 2001 to 2005, with higher errors during summer months than during winter months.},
+  note = {Cited by 84 (OpenAlex)},
+  url = {https://doi.org/10.1109/tste.2016.2629974},
+}
+
+@article{Takaraolu2016Compressive,
+  title = {Compressive Spatio-Temporal Forecasting of Meteorological Quantities and Photovoltaic Power},
+  author = {Akın Taşçıkaraoğlu and Borhan M. Sanandaji and Gianfranco Chicco and Valeria Cocina and Filippo Spertino and Ozan Erdinç and Nikolaos G. Paterakis and João P. S. Catalào},
+  journal = {IEEE Transactions on Sustainable Energy},
+  year = {2016},
+  abstract = {This paper presents a solar power forecasting scheme, which uses spatial and temporal time series data along with a photovoltaic (PV) power conversion model. The PV conversion model uses the forecast of three different variables, namely, irradiance on the tilted plane, ambient temperature, and wind speed, in order to estimate the power produced by a PV plant at the grid connection terminals. The forecast values are obtained using aspatio-temporalmethod that uses the data recorded from a target meteorological station as well as data of its surrounding stations. The proposed forecasting method exploits the sparsity of correlations between time series data in a collection of stations. The performance of both the PV conversion model and the spatio-temporal algorithm is evaluated using high-resolution real data recorded in various locations in Italy. Comparison with other benchmark methods illustrates that the proposed method significantly improves the solar power forecasts, particularly over short-term horizons.},
+  note = {Cited by 91 (OpenAlex)},
+  url = {https://doi.org/10.1109/tste.2016.2544929},
+}
+
+@article{Das2022Optimized,
+  title = {Optimized Support Vector Regression-Based Model for Solar Power Generation Forecasting on the Basis of Online Weather Reports},
+  author = {Utpal Kumar Das and Kok Soon Tey and Mohd Yamani Idna Idris and Saad Mekhilef and Mehdi Seyedmahmoudian and Alex Stojcevski and Ben Horan},
+  journal = {IEEE Access},
+  year = {2022},
+  abstract = {Increasing the forecasting accuracy of photovoltaic (PV)-generated power is currently an important topic, particularly in the maintenance of the stability and reliability of modern electric grid systems. In this study, a model based on a particle swarm optimization (PSO)-optimized support vector regression (SVR) is proposed for the accurate forecasting of PV output power. In the process, an SVR-based model is established based on the most influential historical experimental data collected from an actual PV power station. A PSO-based algorithm is adapted for the selection of dominant SVR-based model parameters and improvement of performance. Moreover, a novel data preparation algorithm is developed for the preparation of a solar irradiance pattern on the basis of weather conditions and the percentages of cloud cover collected from online weather forecast reports. Finally, the proposed model is experimentally verified by deploying it to three different PV systems (1875Wp, 2000Wp and 2700Wp). Analytical and experimental results indicate that the proposed forecasting model ensures improved accuracy. The nRMSE of the proposed forecasting model is 2.841%. The proposed model will be effective in forecasting PV output power in existing PV systems. A guideline for the accurately forecasting of PV output power in practical applications is presented.},
+  note = {Cited by 40 (OpenAlex)},
+  url = {https://doi.org/10.1109/access.2022.3148821},
+}
+
+@article{Mayer2022Probabilistic,
+  title = {Probabilistic photovoltaic power forecasting using a calibrated ensemble of model chains},
+  author = {Martin János Mayer and Dazhi Yang},
+  journal = {Renewable and Sustainable Energy Reviews},
+  year = {2022},
+  abstract = {Physical model chain is a step-by-step modeling framework for the conversion of irradiance to photovoltaic (PV) power. When a model chain is fed with irradiance forecasts, it provides the corresponding PV power forecasts. Despite its advantages, forecasting with model chains has yet to receive the attention that it deserves. In several recent works, however, the idea of model-chain-based solar forecasting has been formally modernized, though the framework was restricted to deterministic forecasting. In this work, the model-chain-based forecasting framework is extended to the probability space, in that, a calibrated ensemble of model chains is used to generate probabilistic PV power forecasts. Using two-year data from eight PV plants in Hungary, alongside professional weather forecasts issued by the Hungarian Meteorological Services, it is empirically shown that the raw model-chain ensemble forecasts tend to be underdispered, but adequate post-processing is able to improve calibration and reduce the continuous ranked probability score of raw ensembles by 20%. Given the fact that uncertainty quantification has a cardinal importance to grid integration, this probabilistic extension of the model-chain-based solar forecasting framework is thought beneficial.},
+  note = {Cited by 85 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.rser.2022.112821},
+}
+
+@article{Muniyandi2025Feature,
+  title = {Feature selection-based irradiance forecast for efficient operation of a stand-alone PV system},
+  author = {Vijay Muniyandi and Vasista Majji and Manam Ravindra and Ramesh Adireddy and Ashok Kumar Balasubramanian},
+  journal = {Green Energy and Intelligent Transportation},
+  year = {2025},
+  abstract = {Solar irradiance (SI) forecasting and determination of optimum tilt angle (OTA) of photovoltaic (PV) panels are the key strategies for improving the power output of PV systems. Precise SI forecasting offer valuable information regarding the predictable accessibility of solar energy, empowering PV system operators to make informed decisions for PV system optimization. This research uses a bi-directional long short-term memory (Bi-LSTM) hybrid network to forecast SI. Then, the OTA of the PV module is estimated by applying the forecasted SI data to the ASHRAE (American Society of Heating, Refrigerating and Air-conditioning Engineers) SI model. The performance of the Bi-LSTM hybrid network to estimate SI is compared with the observed data and the other existing forecasting models in the literature. The impact of OTA in improving PV power output is evaluated by comparing the solar irradiance received on both tilted and horizontal surfaces. This work has been experimentally implemented using the PV module setup at Thiagarajar College of Engineering, Madurai, Tamil Nadu, India. The OTA obtained by the proposed method yielded an increased output PV power compared to all other tilt angle approaches in the literature.},
+  note = {Cited by 12 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.geits.2025.100308},
+}
+
+@inproceedings{Zhou2020Transfer,
+  title = {Transfer Learning for Photovoltaic Power Forecasting with Long Short-Term Memory Neural Network},
+  author = {Siyu Zhou and Lin Zhou and Mingxuan Mao and Xinze Xi},
+  booktitle = {IEEE International Conference on Big Data and Smart Computing (BigComp)},
+  year = {2020},
+  abstract = {Data-driven modeling is one of the research hotspots of photovoltaic (PV) power prediction. However, for some newly built PV power plants, there are not enough historical data to train an accurate model. Therefore, constructing a forecasting model for the PV plants lacking historical data is an urgent problem to be solved. In this paper, we propose a method to transfer the knowledge obtained from historical solar irradiance data to the output prediction. Firstly, based on the historical solar irradiance data, the hyperparameters of the long short-term memory neural network (LSTM) are optimized and the weights in the neurons are pre-trained, then fine-tuning the deep transfer model with PV output data. In this way, knowledge can be transferred from solar irradiance data to PV output data. The experimental results show that the proposed method can significantly reduce the prediction error.},
+  note = {Cited by 58 (OpenAlex)},
+  url = {https://doi.org/10.1109/bigcomp48618.2020.00-87},
+}
+
+@article{Moncada2018Deep,
+  title = {Deep Learning to Forecast Solar Irradiance Using a Six-Month UTSA SkyImager Dataset},
+  author = {Ariana Moncada and Walter B. Richardson and Rolando Vega-Avila},
+  journal = {Energies},
+  year = {2018},
+  abstract = {Distributed PV power generation necessitates both intra-hour and day-ahead forecasting of solar irradiance. The UTSA SkyImager is an inexpensive all-sky imaging system built using a Raspberry Pi computer with camera. Reconfigurable for different operational environments, it has been deployed at the National Renewable Energy Laboratory (NREL), Joint Base San Antonio, and two locations in the Canary Islands. The original design used optical flow to extrapolate cloud positions, followed by ray-tracing to predict shadow locations on solar panels. The latter problem is mathematically ill-posed. This paper details an alternative strategy that uses artificial intelligence (AI) to forecast irradiance directly from an extracted subimage surrounding the sun. Several different AI models are compared including Deep Learning and Gradient Boosted Trees. Results and error metrics are presented for a total of 147 days of NREL data collected during the period from October 2015 to May 2016.},
+  note = {Cited by 63 (OpenAlex)},
+  url = {https://doi.org/10.3390/en11081988},
+}
+
+@inproceedings{Wang2019Deep,
+  title = {Deep Learning Based Irradiance Mapping Model for Solar PV Power Forecasting Using Sky Image},
+  author = {Fei Wang and Zhanyao Zhang and Hua Chai and Yili Yu and Xiaoxing Lu and Tieqiang Wang and Yuzhang Lin},
+  booktitle = {IEEE Industry Applications Society Annual Meeting (IAS)},
+  year = {2019},
+  abstract = {The entrenched instability of solar power output throttles its further integration into power grids worldwide. Thus the precise solar power forecasting (SPF) is helpful for the improvement of power grid stability and better exploitation of clean solar energy. As an important role of ultra-short-term SPF, sky images always contain volatile clouds, which results in tempestuous variation of the output of PV plants. Therefore, an accurate model that can capture the mapping relationship between sky image data and solar irradiance data is significant for fulfilling the ultra-short-term SPF. To fill the gap in the content of this research field, this paper proposes two end to end irradiance mapping models based on deep learning technologies, namely convolutional neural network (CNN) and long short-term memory (LSTM) neural network. Then the mapping performance of the above two mapping models is compared to that of traditional artificial neural network (ANN) based model. In all the aforementioned models, it should be noted that the solar irradiance data output by mapping models is in one-to-one correspondence with the input sky image data in time. The deterministic and probability methods are applied to statistically evaluate the mapping result of CNN and LSTM models. Our case study shows that deep learning architectures, especially the CNN based model, are good at mapping sky images to corresponding surface solar irradiance.},
+  note = {Cited by 36 (OpenAlex)},
+  url = {https://doi.org/10.1109/ias.2019.8912348},
+}
+
+@article{Jain2024Holistic,
+  title = {Holistic and Lightweight Approach for Solar Irradiance Forecasting},
+  author = {Mayank Kumar Jain and Piyush Yadav and Soumyabrata Dev},
+  journal = {IEEE Transactions on Geoscience and Remote Sensing},
+  year = {2024},
+  abstract = {The introduction of solar power in energy grids is crucial for sustainable progress, but gets restricted due to frequently fluctuating electricity outputs generated by intermittent solar irradiance. The problem requires proper power planning and operations management that requires accurate and reliable solar irradiance forecasts. In this context, this research presents a holistic and lightweight framework for solar irradiance forecasting, the critical component for generating photovoltaic (PV) output. The paper’s holistic approach leverages meteorological variables, historical global horizontal irradiance (GHI) data, ground-based sky imager (GSI) images, satellite-derived cloud masks, and satellite-based clear sky data to improve forecasting accuracy. The proposed framework extends the forecasting horizon to 60 min while covering a continuous 6-h historical context. Innovative feature extraction techniques were implemented to reduce the cloud image dimensions, enabling the development of a lightweight forecasting model. The results demonstrate the effectiveness of this approach, contributing to a more reliable GHI forecasting for efficient energy grid management.},
+  note = {Cited by 12 (OpenAlex)},
+  url = {https://doi.org/10.1109/tgrs.2024.3415413},
+}
+
+@article{Polo2023Exploring,
+  title = {Exploring the PV Power Forecasting at Building Façades Using Gradient Boosting Methods},
+  author = {Jesús Polo and Nuria Martín-Chivelet and Miguel Alonso-Abella and Carlos Sanz-Saiz and José Cuenca and Marina de la Cruz},
+  journal = {Energies},
+  year = {2023},
+  abstract = {Solar power forecasting is of high interest in managing any power system based on solar energy. In the case of photovoltaic (PV) systems, and building integrated PV (BIPV) in particular, it may help to better operate the power grid and to manage the power load and storage. Power forecasting directly based on PV time series has some advantages over solar irradiance forecasting first and PV power modeling afterwards. In this paper, the power forecasting for BIPV systems in a vertical façade is studied using machine learning algorithms based on decision trees. The forecasting scheme employs the skforecast library from the Python environment, which facilitates the implementation of different schemes for both deterministic and probabilistic forecasting applications. Firstly, deterministic forecasting of hourly BIPV power was performed with XGBoost and Random Forest algorithms for different cases, showing an improvement in forecasting accuracy when some exogenous variables were used. Secondly, probabilistic forecasting was performed with XGBoost combined with the Bootstrap method. The results of this paper show the capabilities of Random Forest and gradient boosting algorithms, such as XGBoost, to work as regressors in time series forecasting of BIPV power. Mean absolute error in the deterministic forecast, using the most influencing exogenous variables, were around 40% and close below 30% for the south and east array, respectively.},
+  note = {Cited by 31 (OpenAlex)},
+  url = {https://doi.org/10.3390/en16031495},
+}
+
+@article{Barhmi2026Towards,
+  title = {Towards Solar Nowcasting: Short-Term Solar Irradiance Forecasting with All-Sky Imagers and Artificial Intelligence},
+  author = {Khadija Barhmi},
+  journal = {Utrecht University Repository (Utrecht University)},
+  year = {2026},
+  abstract = {The increasing share of solar photovoltaics (PV) in power grids and buildings is reshaping the energy landscape but also introducing operational challenges due to the inherent variability of solar irradiance. Rapid cloud movements can cause short-term fluctuations in PV output, making it difficult to ensure grid stability, manage power imbalances, and optimize energy use within Building Energy Management Systems (BEMS). This thesis, titled Towards Solar Nowcasting, contributes to overcoming these challenges by advancing short-termsolar forecasting techniques, with a particular emphasis on real-time, image-based forecasting also known as solar nowcasting. To this end, the research begins with a comprehensive review of solar forecasting techniques, highlighting the growing importance of Artificial Intelligence (AI) methods in capturing complex irradiance patterns across diverse time horizons, from ultra-short (1 minute) to 24 hours ahead. A particular focus is placed on the potential of neural networks and hybrid AI models, as well as the critical need for standardized datasets and benchmarking practices to ensure accurate model evaluation and performance. This review forms the foundation for the development of innovative nowcasting solutions. Building on these insights, the thesis presents a data-driven short-termsolar forecasting framework using all-sky imagers (ASIs) and deep learning. Specifically, cloud movement is tracked using optical flow models, and future sky states are generated to serve as inputs for Convolutional Neural Networks (CNNs) and Long Short-TermMemory (LSTM) networks. This hybrid approach enables accurate Global Horizontal Irradiance (GHI) predictions up to 20 minutes ahead. The developed models demonstrate significant improvements over baseline persistence methods, achieving ramp skill scores of up to 39% under sunny conditions. To address the limitations of existing methods in complex weather scenarios, the thesis further develops an innovative hybrid AI framework that combines superpixel-based cloud detection, Support Vector Machines (SVMs), CNNs, and Kalman filtering. This approach integrates high-resolution sky images, advanced computer vision techniques, and adaptive weather classification to deliver reliable GHI forecasts for horizons up to one hour. Tested on extensive datasets from the Netherlands, the method showed marked improvements in forecast accuracy, particularly under challenging conditions such as overcast or rainy skies, where conventional models often fail. Finally, the thesis translates these forecasting advancements into practical applications for congestion management, power imbalance mitigation, and building energy management. By benchmarking statistical, AI-based, and sky-imager-driven PV forecasting techniques, the study demonstrates that the integration of real-time sky image data significantly enhances short-term PV power forecasts. This, in turn, supports grid operators in implementing proactive congestion control, reduces reliance on costly balancing reserves, and enables intelligent energy management strategies within buildings, including load shifting, battery storage optimization, and increased PV self-consumption. In summary, in this thesis, advanced short-termsolar forecasting techniques have been developed to address key operational challenges arising fromthe growing integration of solar photovoltaics (PV) into modern energy systems. By combining all-sky imaging, artificial intelligence, and hybrid machine learning frameworks, this work demonstrates significant improvements in the accuracy and reliability of solar nowcasting. The proposed methodologies provide practical solutions for congestion management, power imbalance reduction, and optimized building energy management. Overall, this thesis contributes to enabling a more reliable and efficient integration of solar energy, supporting the broader goals of grid stability, energy flexibility, and the ongoing energy transition.},
+  note = {Cited by 0 (OpenAlex)},
+  url = {https://doi.org/10.33540/3699},
+}
+
+@article{Alzahrani2017Solar,
+  title = {Solar Irradiance Forecasting Using Deep Neural Networks},
+  author = {Ahmad Alzahrani and Pourya Shamsi and Cihan H. Dağli and Mehdi Ferdowsi},
+  journal = {Procedia Computer Science},
+  year = {2017},
+  abstract = {Predicting solar irradiance has been an important topic in renewable energy generation. Prediction improves the planning and operation of photovoltaic systems and yields many economic advantages for electric utilities. The irradiance can be predicted using statistical methods such as artificial neural networks (ANN), support vector machines (SVM), or autoregressive moving average (ARMA). However, they either lack accuracy because they cannot capture long-term dependency or cannot be used with big data because of the scalability. This paper presents a method to predict the solar irradiance using deep neural networks. Deep recurrent neural networks (DRNNs) add complexity to the model without specifying what form the variation should take and allow the extraction of high-level features. The DRNN is used to predict the irradiance. The data utilized in this study is real data obtained from natural resources in Canada. The simulation of this method will be compared to several common methods such as support vector regression and feedforward neural networks (FNN). The results show that deep learning neural networks can outperform all other methods, as the performance tests indicate.},
+  note = {Cited by 290 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.procs.2017.09.045},
+}
+
+@article{Khan2023Solar,
+  title = {Solar Irradiance Forecasting Using Deep Learning Techniques},
+  author = {Hammad Ali Khan and Moeed Alam and Hassan Ali Rizvi and Abdullah Munir},
+  year = {2023},
+  abstract = {Solar irradiance, the power of sunlight received on a given surface area during a specific time, is crucial in determining the efficiency and performance of solar power systems, as it directly influences the electricity units generated by photovoltaic (PV) cells. In recent years, deep learning and machine learning techniques have been leveraged to enhance the accuracy of solar adsorption and wind power forecasting. In this context, this study presents a comparative study of various deep learning models for very short term solar irradiance forecasting, aiming to find the most effective model for this specific purpose for our local city Karachi. The key findings indicate that the LSTM model outperforms the other architectures, achieving the highest R-squared value and the lowest RMSE. These results emphasize the importance of accurate forecasting models in optimizing renewable energy generation and grid management and their potential applications in various sectors.},
+  note = {Cited by 14 (OpenAlex)},
+  url = {https://doi.org/10.3390/engproc2023046015},
+}
+
+@article{Soleymani2023Comparative,
+  title = {Comparative Analysis of Machine Learning Algorithms for Solar Irradiance Forecasting in Smart Grids},
+  author = {Saman Soleymani and Shima Mohammadzadeh},
+  journal = {arXiv (Cornell University)},
+  year = {2023},
+  abstract = {The increasing global demand for clean and environmentally friendly energy resources has caused increased interest in harnessing solar power through photovoltaic (PV) systems for smart grids and homes. However, the inherent unpredictability of PV generation poses problems associated with smart grid planning and management, energy trading and market participation, demand response, reliability, etc. Therefore, solar irradiance forecasting is essential for optimizing PV system utilization. This study proposes the next-generation machine learning algorithms such as random forests, Extreme Gradient Boosting (XGBoost), Light Gradient Boosted Machine (lightGBM) ensemble, CatBoost, and Multilayer Perceptron Artificial Neural Networks (MLP-ANNs) to forecast solar irradiance. Besides, Bayesian optimization is applied to hyperparameter tuning. Unlike tree-based ensemble algorithms that select the features intrinsically, MLP-ANN needs feature selection as a separate step. The simulation results indicate that the performance of the MLP-ANNs improves when feature selection is applied. Besides, the random forest outperforms the other learning algorithms.},
+  note = {Cited by 17 (OpenAlex)},
+  url = {https://doi.org/10.48550/arxiv.2310.13791},
+}
+
+@article{Yeung2025Comprehensive,
+  title = {Comprehensive Analysis of Solar Irradiance and Photovoltaic Power Generation: Case Studies in Wuhan and Zhangbei, China},
+  author = {Chakhung Yeung and Jianguo Wang and Yaping Du and Jinxin Cao and Quan Zhou and Yuxuan Ding and Mingli Chen and Weihan Zhao and Chuanzhen Jia},
+  journal = {IEEE Transactions on Industry Applications},
+  year = {2025},
+  abstract = {Advancing renewable energy is imperative for addressing global energy deficits and mitigating carbon dioxide emissions. Solar energy, known for its sustainability and renewability, has become a pivotal energy source, but its inherent intermittency remains a significant challenge for modern power systems integrating renewable energy. This study investigates solar irradiance and photovoltaic (PV) power generation characteristics, focusing on the data from Wuhan and Zhangbei, China, two representative cities with contrasting climates and geographical conditions. Findings show that, despite receiving less solar irradiance, Zhangbei achieves higher PV conversion efficiency due to its geographic advantages. The study also reveals that solar irradiance distribution varies with weather conditions, impacting PV power output. The influence of tilt angle is primarily determined by the value of direct normal irradiance (DNI) received by the panels, whereas the effect of azimuth angle depend on the direction of DNI, with more pronounced impacts observed on sunny and cloudy days. The algorithm proposed in this study for optimizing the tilt angle of PV panels considers both the geographical location and climatic conditions of various regions. This research provides a theoretical basis for the siting of PV power plants and for forecasting solar irradiance and PV power generation},
+  note = {Cited by 10 (OpenAlex)},
+  url = {https://doi.org/10.1109/tia.2025.3569247},
+}
+
+@article{Dokur2020Swarm,
+  title = {Swarm Decomposition Technique Based Hybrid Model for Very Short-Term Solar PV Power Generation Forecast},
+  author = {Emrah Dokur},
+  journal = {Elektronika ir Elektrotechnika},
+  year = {2020},
+  abstract = {Accurate predictions of solar photovoltaic (PV) power generation at different time horizons are essential for reliable operation of energy management systems. The output power of a PV power plant is dependent on non-linear and intermittent environmental factors, such as solar irradiance, wind speed, relative humidity, etc. Intermittency and randomness of solar PV power effect precision of estimation. To address the challenge, this paper presents a Swarm Decomposition Technique (SWD) based hybrid model as a novel approach for very short-term (15 min) solar PV power generation forecast. The original contribution of the study is to investigate use of SWD for solar data forecast. The solar PV power generation data with hourly resolution obtained from the field (grid connected, 857.08 kWp Akgul Solar PV Power Plant in Turkey) are used to develop and validate the forecast model. Specifically, the analysis showed that the hybrid model with SWD technique provides highly accurate predictions in cloudy periods.},
+  note = {Cited by 20 (OpenAlex)},
+  url = {https://doi.org/10.5755/j01.eie.26.3.25898},
+}
+
+@article{Roy2023Development,
+  title = {Development of a day-ahead solar power forecasting model chain for a 250 MW PV park in India},
+  author = {Arindam Roy and Aravindakshan Ramanan and Barun Kumar and Chris Alice Abraham and Annette Hammer and E. I. Barykina and Detlev Heinemann and Naveen R Kumar and H.P. Waldl and Indradip Mitra and Prasun Kumar Das and R. Karthik and Kadhirvel Boopathi and K. Balaraman},
+  journal = {International journal of energy and environmental engineering},
+  year = {2023},
+  abstract = {Abstract Due to the steep rise in grid-connected solar Photovoltaic (PV) capacity and the intermittent nature of solar generation, accurate forecasts are becoming ever more essential for the secure and economic day-ahead scheduling of PV systems. The inherent uncertainty in Numerical Weather Prediction (NWP) forecasts and the limited availability of measured datasets for PV system modeling impacts the achievable day-ahead solar PV power forecast accuracy in regions like India. In this study, an operational day-ahead PV power forecast model chain is developed for a 250 MWp solar PV park located in Southern India using NWP-predicted Global Horizontal Irradiance (GHI) from the European Centre of Medium Range Weather Forecasts (ECMWF) and National Centre for Medium Range Weather Forecasting (NCMRWF) models. The performance of the Lorenz polynomial and a Neural Network (NN)-based bias correction method are benchmarked on a sliding window basis against ground-measured GHI for ten months. The usefulness of GHI transposition, even with uncertain monthly tilt values, is analyzed by comparing the Global Tilted Irradiance (GTI) and GHI forecasts with measured GTI for four months. A simple technique for back-calculating the virtual DC power is developed using the available aggregated AC power measurements and the inverter efficiency curve from a nearby plant with a similar rated inverter capacity. The AC power forecasts are validated against aggregated AC power measurements for six months. The ECMWF derived forecast outperforms the reference convex combination of climatology and persistence. The linear combination of ECMWF and NCMRWF derived AC forecasts showed the best result.},
+  note = {Cited by 12 (OpenAlex)},
+  url = {https://doi.org/10.1007/s40095-023-00560-6},
+}
+
+@article{Chicco2015Error,
+  title = {Error Assessment of Solar Irradiance Forecasts and AC Power from Energy Conversion Model in Grid-Connected Photovoltaic Systems},
+  author = {Gianfranco Chicco and Valeria Cocina and Paolo Di Leo and Filippo Spertino and Alessandro Massi Pavan},
+  journal = {Energies},
+  year = {2015},
+  abstract = {Availability of effective estimation of the power profiles of photovoltaic systems is essential for studying how to increase the share of intermittent renewable sources in the electricity mix of many countries. For this purpose, weather forecasts, together with historical data of the meteorological quantities, provide fundamental information. The weak point of the forecasts depends on variable sky conditions, when the clouds successively cover and uncover the solar disc. This causes remarkable positive and negative variations in the irradiance pattern measured at the photovoltaic (PV) site location. This paper starts from 1 to 3 days-ahead solar irradiance forecasts available during one year, with a few points for each day. These forecasts are interpolated to obtain more irradiance estimations per day. The estimated irradiance data are used to classify the sky conditions into clear, variable or cloudy. The results are compared with the outcomes of the same classification carried out with the irradiance measured in meteorological stations at two real PV sites. The occurrence of irradiance spikes in “broken cloud” conditions is identified and discussed. From the measured irradiance, the Alternating Current (AC) power injected into the grid at two PV sites is estimated by using a PV energy conversion model. The AC power errors resulting from the PV model with respect to on-site AC power measurements are shown and discussed.},
+  note = {Cited by 34 (OpenAlex)},
+  url = {https://doi.org/10.3390/en9010008},
+}
+
+@article{K2016Solar,
+  title = {Solar Power Forecasting: A Review},
+  author = {D. K. and I Isha},
+  journal = {International Journal of Computer Applications},
+  year = {2016},
+  abstract = {The increasing demand for energy is one of the biggest reasons behind the integration of solar energy into the electric grids or networks.To ensure the efficient use of energy PV systems it becomes important to forecast information reliably.The accurate prediction of solar irradiance variation can enhance the quality of service.This integration of solar energy and accurate prediction can help in better planning and distribution of energy.Here in this paper, a deep review of methods which are used for solar irradiance forecasting is presented.These methods help in selecting the appropriate forecast technique according to the needs or requirements.This paper also presents the metrics that are used for evaluating the performance of a forecast model.},
+  note = {Cited by 64 (OpenAlex)},
+  url = {https://doi.org/10.5120/ijca2016910728},
+}
+
+@article{Zhu2024novel,
+  title = {A novel soft sensing method using intelligent modeling method for solar irradiance and temperature in distributed PV power plant},
+  author = {Honglu Zhu and Tingting Jiang and Hai Lun Zhou and Yahui Sun and Wenwen Ma and Xi Zhang},
+  journal = {Energy Science & Engineering},
+  year = {2024},
+  abstract = {Abstract Distributed photovoltaic (PV) power plants often lack solar irradiance monitoring devices, significantly hindering crucial functions such as power forecasting, fault diagnosis, and performance calculation for distributed PV. To address this issue, a real‐time method for soft sensing solar irradiance was proposed in distributed PV. First, we investigated the typical relationship between solar irradiance, ambient temperature, and the electrical characteristics of PV cells. Based on this relationship, we utilized the small sample modeling technique of the Genetic Algorithm‐Support Vector Machine to calculate the ambient temperature. Subsequently, a solar irradiance calculation model based on the backpropagation neural network was developed, taking the PV array voltage, current, calculated ambient temperature, and power as inputs. This approach enables for the estimation of solar irradiance in distributed PV power plants through a simple and efficient calculation process. To demonstrate the reliability and flexibility of the algorithm, we conducted testing with data under various input conditions, such as different power plant configurations, and seasons, coefficient of determination for the proposed model reached 0.95. Overall, the novelty of the proposed method offers a practical solution for soft sensing of solar irradiance in PV power plants, enabling accurate performance analysis and effective operation management without hardware investment.},
+  note = {Cited by 12 (OpenAlex)},
+  url = {https://doi.org/10.1002/ese3.1679},
+}
+
+@article{Hu2018Seasonal,
+  title = {A Seasonal Model Using Optimized Multi-Layer Neural Networks to Forecast Power Output of PV Plants},
+  author = {Yang Hu and Weiwei Lian and Yutong Han and Songyuan Dai and Honglu Zhu},
+  journal = {Energies},
+  year = {2018},
+  abstract = {With the continuous increase of grid-connected photovoltaic (PV) installed capacity and the urgent demand of synergetic utilization with the other power generation forms, the high-precision prediction of PV power generation is increasingly important for the optimal scheduling and safe operation of the grid. In order to improve the power prediction accuracy, using the response characteristics of PV array under different environmental conditions, a data driven multi-model power prediction method for PV power generation is proposed, based on the seasonal meteorological features. Firstly, through the analysis of PV power characteristics in typical seasons and seasonal distribution of the weather factors, such as solar irradiance and ambient temperature, the influences of different weather factors on PV power prediction are studied. Then, according to the meteorology characteristics of Beijing, different seasons can be divided. The historical data corresponding to different seasons are acquired and then the seasonal PV power forecasting models are established based on optimized multi-layer back propagation neural network (BPNN), realizing the multi-model prediction of PV power. Finally, effectiveness of the seasonal PV power forecasting method is compared and validated. The performance analysis of the neural network forecasting model under typical seasonal conditions shows that the multi-model forecasting method based on seasonal characteristics of PV power generation is better than that of single power forecasting model for the whole year. The results show that the proposed method can effectively improve the power forecasting accuracy of PV power.},
+  note = {Cited by 45 (OpenAlex)},
+  url = {https://doi.org/10.3390/en11020326},
+}
+
+@inproceedings{Syed2025Shortterm,
+  title = {Short-term solar irradiance forecasting using deep learning models},
+  author = {Saad Ahmed Syed and Wei Chang and Humaira Nisar and Hannan Naseem Riaz and Kim Ho Yeap and Nur Saida Mohamad Zaber},
+  booktitle = {E3S Web of Conferences},
+  year = {2025},
+  abstract = {Population growth and evolving consumer technology have resulted in an ever-increasing demand for energy and power. Traditional energy sources such as coal, oil, and gas are not only quickly depleting but have also contributed to global pollution. As a result, the demand for renewable energy for power generation has increased tremendously. Short-term solar irradiance is a critical area in renewable energy for the optimal operation and power prediction of grid-connected photovoltaic (PV) plants and other solar energy applications. However, solar irradiance is complex to handle due to the nonuniform characteristics of inconsistent weather conditions. Deep Learning techniques have shown outstanding performance in modeling these complexities. In this paper, short-term solar forecasting models are proposed using deep learning to reliably predict the amount of solar irradiance for optimal power generation. Furthermore, it is also evaluated whether the model can forecast the amount of Global Horizontal Irradiance (GHI) within one hour given the current recorded features including air temperature, azimuth, cloud opacity, and zenith. The data for Penang, Malaysia is used in this research. A Dense Neural Network (DNN) with 32 units achieved a validation MAE of 21.33 and MSE of 1343.68 in the 6th fold. Long-Short Term Memory (LSTM) with 256 units achieved a validation MAE of 8.23 and MSE of 246.98 in the 7 th fold. On test data, the DNN achieved MAE and MSE of 31.71 and 2560.80 respectively whereas the LSTM model achieved MAE and MSE of 5.78 and 106.65 respectively.},
+  note = {Cited by 6 (OpenAlex)},
+  url = {https://doi.org/10.1051/e3sconf/202560303003},
+}
+
+@inproceedings{Karthika2024Enhanced,
+  title = {Enhanced Solar Power Forecasting with CNNs Using Sky Imagery and Cloud Detection},
+  author = {S. Karthika and K. Surya and Rahul Satheesh},
+  booktitle = {International Conference on Advances in Computing and Communications (ICACC)},
+  year = {2024},
+  abstract = {The intermittent nature of solar power challenges the large scale integration of photovoltaics(PV) into electricity grids. Solar intermittency means fluctuation in power generation due to factors like irradiance, humidity, PV surface temperature etc. For the prediction of short-term fluctuations, deep learning using sky imagery is recognized as a promising approach for solar forecasting. Cloud changes in the sky are the primary driver of solar power fluctuations in short time intervals. This study proposes a CNN-based deep learning approach for short-term solar power forecasting using sky images. The model detects spatial and temporal trends that aid in precise prediction by utilizing a three-year collection of sky images and associated PV generation data. The model performs remarkably well on bright days, properly estimating solar power generation, as evidenced by evaluation criteria such as RMSE, MAE, and Forecast Skill (FS). Overall, it performs better than conventional persistence models, suggesting that there is a scope to improve the accuracy of solar power forecasts. The integration of cloud detection further enhances the model’s performance, allowing it to better differentiate between sunny and cloudy conditions.},
+  note = {Cited by 3 (OpenAlex)},
+  url = {https://doi.org/10.1109/icacc63692.2024.10845330},
+}
+
+@article{Scolari2017PhotovoltaicModelBased,
+  title = {Photovoltaic-Model-Based Solar Irradiance Estimators: Performance Comparison and Application to Maximum Power Forecasting},
+  author = {Enrica Scolari and Fabrizio Sossan and Mario Paolone},
+  journal = {IEEE Transactions on Sustainable Energy},
+  year = {2017},
+  abstract = {Due to the increasing proportion of distributed photovoltaic (PV) production in the generation mix, the knowledge of the PV generation capacity has become a key factor. In this paper, we propose to compute the PV plant maximum power starting from the indirectly estimated irradiance. Three estimators are compared in terms of ability to compute the PV plant maximum power, bandwidth, and robustness against measurements noise. The approaches rely on measurements of the DC voltage, current, and cell temperature, and on a model of the PV array. We show that the considered methods can accurately reconstruct the PV maximum generation even during curtailment periods, i.e., when the measured PV power is not representative of the maximum potential of the PV array. Performance evaluation is carried out by using a dedicated experimental setup on a 14.3 kWp rooftop PV installation. Results also proved that the analyzed methods can outperform pyranometer-based estimations with a simple sensing system. We show how the obtained PV maximum power values can be applied to train time series based solar maximum power forecasting techniques. This is beneficial when the measured power values, commonly used as training, are not representative of the maximum PV potential.},
+  note = {Cited by 68 (OpenAlex)},
+  url = {https://doi.org/10.1109/tste.2017.2714690},
+}
+
+@inproceedings{Wang2018Neural,
+  title = {Neural Network Based Irradiance Mapping Model of Solar PV Power Forecasting Using Sky Image},
+  author = {Fei Wang and Xinxin Ge and Zhao Zhen and Hui Ren and Yajing Gao and Dashuai Ma and Miadreza Shafie‐khah and João P. S. Catalào},
+  booktitle = {IEEE Industry Applications Society Annual Meeting (IAS)},
+  year = {2018},
+  abstract = {Due to the stochastic fluctuant characteristic of solar irradiance, large-scale grid-connected photovoltaic (PV) power plants can bring great difficulties to the operation of the power system. In order to fulfil the sky images based ultra-short term PV power forecasting and enhance the grid consumptive ability of PV power, an accurate model that can map sky images to corresponding surface solar irradiance is very significant. Therefore, in this paper a neural network based irradiance mapping model of solar PV power forecasting using sky image is proposed. First, we combine the theoretical calculation of extraterrestrial solar irradiance and atmospheric optical thickness to establish the clearance surface irradiance model. Second, the sky images observed by total sky imager are processed to extract image features related to solar irradiance. Third, a neural network based irradiance mapping model is built and trained using historical sky images and solar irradiance data. Simulation results show that the proposed model can map sky image features to surface solar irradiance accurately in different weather conditions.},
+  note = {Cited by 24 (OpenAlex)},
+  url = {https://doi.org/10.1109/ias.2018.8544694},
+}
+
+@article{Marweni2025ShortTerm,
+  title = {Short-Term Solar Irradiance and Power Forecasting in Uncertain Photovoltaic Systems},
+  author = {Manel Marweni and Mansour Hajji and Majdi M. Mansouri and Mohamed Faouzi Mimouni},
+  journal = {Research Square},
+  year = {2025},
+  abstract = {Abstract Renewable energy (RE), while essential for the energy transition, poses significant challenges due to its variability and reliance on environmental factors , such as sunlight availability for Grid-Connected Photovoltaic (GCPV) systems. This intermittent nature complicates maintaining a stable balance between energy production and demand. To address these challenges, Energy Management (EM) plays a vital role in enabling optimal planning and resource allocation. In this context, forecasting becomes crucial for predicting production fluctuations and supporting proactive decision-making. Short-term forecasting, in particular, facilitates quick anticipation of variations and real-time adaptation of management strategies. This study proposes a Feedforward Neural Network (FFNN) model for short-term forecasting in renewable energy systems, effectively addressing variability challenges. By incorporating prediction intervals, the model ensures accurate predictions with quantified uncertainty. The model demonstrates high performance, with irradiance Mean Absolute Error (MAE) ranging between 0.3115 and 0.3506, Root Mean Squared Error (RMSE) between 0.4061 and 0.4802, and R 2 of 1.00. For power, the MAE ranges from 7.0136 to 7.8298, RMSE from 8.2715 to 9.2084, and R 2 of 0.99, underscoring its reliability for energy management applications.},
+  note = {Cited by 3 (OpenAlex)},
+  url = {https://doi.org/10.21203/rs.3.rs-5766097/v1},
+}
+
+@inproceedings{Sahoo2016Energy,
+  title = {Energy forecasting for grid connected MW range solar PV system},
+  author = {Ashwin Kumar Sahoo and Sarat Kumar Sahoo},
+  booktitle = {India International Conference on Power Electronics (IICPE)},
+  year = {2016},
+  abstract = {An accurate forecasting of PV output is essential to improve real-time control performance and to reduce possible negative impacts. For an energy management system (EMS) of distributed energy resources, accurate forecasting of solar irradiation and thus PV power output can reduce the impact of uncertainty for PV power generation, improve system reliability, and increase the penetration level of the PV power generation system. Solar power output can be predicted based on historical solar irradiance and weather data, using Artificial Neural Networks and then is converted to PV power output. Neural Networks is designed to train, visualize, and validate network models using feed forward network with back propagation algorithm. The model is trained; using data collected from a 10 kW PV system which includes beam solar irradiance, relative humidity, temperature and wind speed as input for the training set. The future DC and AC power outputs are predicted for any given day. Also the power forecasting is being extended for a 100 kW and 1 MW PV system.},
+  note = {Cited by 11 (OpenAlex)},
+  url = {https://doi.org/10.1109/iicpe.2016.8079388},
+}
+
+@article{Visser2021Operational,
+  title = {Operational day-ahead solar power forecasting for aggregated PV systems with a varying spatial distribution},
+  author = {Lennard Visser and Tarek A. AlSkaif and Wilfried G.J.H.M. van Sark},
+  journal = {Renewable Energy},
+  year = {2021},
+  abstract = {Accurate forecasts of the power production of distributed photovoltaic (PV) systems are essential to support grid operation and enable a high PV penetration rate in the electricity grid. In this study, we analyse the performance of 12 different models that forecast the day-ahead power production in agreement with market conditions. These models include regression, support vector regression, ensemble learning, deep learning and physical based techniques. In addition, we examine the effect of aggregating multiple PV systems with a varying inter-system distance on the forecast model performance. The models are evaluated both on their technical and economic performance. From a technical perspective, the results show a positive effect from both an increasing inter-system distance and a larger sized PV fleet on the model performance, which was not the case for the economic assessment. Furthermore, the ensemble and deep learning models perform better than the alternatives from a technical point of view. For the economic assessment, the results indicate the superiority of the physical based model, followed by the deep learning models. Lastly, our findings show the importance of considering the user's objective when assessing solar power forecast models.},
+  note = {Cited by 144 (OpenAlex)},
+  url = {https://doi.org/10.1016/j.renene.2021.10.102},
+}
+
+@inproceedings{Benitez2022SARIMAX,
+  title = {Use of SARIMAX Model for Solar PV Power Output Forecasting in Baguio City, Philippines},
+  author = {Ian B. Benitez and Lheander G. Gerna and Jessa A. Ibañez and Jeark A. Principe and Francisco de los Reyes},
+  booktitle = {International Conference and Utility Exhibition on Energy, Environment and Climate Change (ICUE)},
+  year = {2022},
+  abstract = {Over the past few decades, there has been a continuous increase in the public interest for solar energy as an alternative and cleaner source of energy. Therefore, it is not surprising that there is a similar interest in developing accurate models to forecast solar photovoltaic (PV) power production. Such models vary depending on the geographical location of PV sites and the seasons considered. The Philippines has yet to have a solar PV output forecasting model adapted to the country's local conditions. This study aims to evaluate the Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX) forecasting model as a tool for forecasting solar PV generation based on the seasonal characteristics of the country and identify which input parameters are significant for each season. This work used solar PV production data as an endogenous variable. Meanwhile, exogenous variables include in-situ solar irradiance data from solar power plants; and cloud cover, wind speed and direction, ambient temperature, precipitation, and relative humidity, which we extracted from ERA5 Reanalysis data. Datasets were divided based on the seasons as defined by the Philippine Atmospheric, Geophysical, and Astronomical Services Administration (PAGASA), namely, hot dry (HD), rainy (R), and cold dry (CD) seasons. Then, we performed a forecast on each season and one full year to assess the performance of the SARIMAX model. The best model per season was done based on the forecasting accuracy measured using Mean Absolute Error (MAE) and Root Mean Square Error (RMSE). This work analyzed seasonal and year-round SARIMAX models for Baguio City, Philippines. Results show that the cold dry season got the highest accuracy value in terms of 2.26 MAE and 4.06 RMSE. Meanwhile, the rainy season had the lowest accuracy of 12.91 MAE and 16.16 RMSE. We can infer from our findings that seasonal forecasting is better during hot dry and cold dry seasons. We also found that the year-round forecasting model performs better than the rainy season model. From the significant parameters identified in our best models, our analysis showed that wind direction can be removed from all models; irradiation and relative humidity were significant for all seasons.},
+  note = {Cited by 13 (OpenAlex)},
+  url = {https://doi.org/10.1109/icue55325.2022.10113538},
+}
+
+@inproceedings{Raza2016improved,
+  title = {An improved neural ensemble framework for accurate PV output power forecast},
+  author = {Muhammad Qamar Raza and N. Mithulananthan and Chandima Ekanayake},
+  booktitle = {Australasian Universities Power Engineering Conference},
+  year = {2016},
+  abstract = {A significant role of renewable energy resource such as solar photovoltaic (PV) is substantially important for the smart grid. One of a major challenge for large scale integration of PV into the grid is intermittent and uncertain nature of solar PV. Therefore, developing a framework for accurate PV output power forecast is utmost important. In this research, a novel ensemble forecast framework is purposed. A novel feed forward neural network (FNN) ensemble based forecast framework is proposed and trained with particle swarm optimization (PSO). The wavelet transform (WT) technique is applied to handle the sharp spikes and fluctuations in historical PV output data. Correlated variables such as PV output power data, solar irradiance, temperature, humidity and wind speed are applied as inputs to forecast the PV output power precisely. The performance of proposed framework was analyzed for one day ahead load PV output power forecast of summer (S), autumn (A), winter (W) and spring (SP) days. The selected days from each season are a clear day (CD), partial cloudy day (PCD) and cloudy day (CLD). The proposed forecast framework provides higher forecast accuracy compared to persistence and backpropagation neural network (BPNN) model.},
+  note = {Cited by 12 (OpenAlex)},
+  url = {https://doi.org/10.1109/aupec.2016.7749296},
+}
+
+@inproceedings{Li2018Photovoltaic,
+  title = {Photovoltaic Power Forecasting: Models and Methods},
+  author = {Pengtao Li and Kaile Zhou and Shanlin Yang},
+  booktitle = {IEEE Conference on Energy Internet and Energy System Integration (EI2)},
+  year = {2018},
+  abstract = {The integration of PV power brings many economic and environmental benefits. However, high penetration of PV power brings many challenges for power system operations and planning, mainly due to its uncertain and intermittent characteristics. The output power of PV system is subjected to ramping, since its dependence on solar irradiance and other meteorological factors changes frequently. One of the possible solutions to balance these challenges is power output forecasting. This paper presents a comprehensive and systematic overview of existing research works on PV power forecasting. Major factors that influence the output of PV power generation and PV power forecasting are discussed. The research progress of statistical methods for photovoltaic power forecasting in recent years is also investigated. In addition, model selection strategy and assessment indicators are analyzed. The effect of model input, the potential benefits of hybrid methods, and the effect of parameter selection in PV power forecasting are further explored.},
+  note = {Cited by 37 (OpenAlex)},
+  url = {https://doi.org/10.1109/ei2.2018.8582674},
+}

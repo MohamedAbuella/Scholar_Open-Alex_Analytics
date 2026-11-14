@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scholar Review Dashboard</title>
+<style>
+:root{--p:#0f3d6e;--a:#0d9488;--bg:#f1f5f9;--c:#fff;--b:#cbd5e1;--t:#0f172a;--m:#64748b}
+@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--c:#1e293b;--b:#334155;--t:#e2e8f0;--m:#94a3b8;--p:#7dd3fc}}
+*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--t);display:flex;min-height:100vh}
+nav{width:230px;background:var(--c);border-right:1px solid var(--b);padding:14px;position:sticky;top:0;height:100vh}
+nav h1{font-size:15px;color:var(--p);margin:0 0 4px}nav small{color:var(--m)}
+nav button{display:block;width:100%;text-align:left;margin-top:6px;padding:9px 10px;border:1px solid var(--b);background:var(--c);color:var(--t);border-radius:6px;cursor:pointer}
+nav button.on{background:var(--p);color:var(--bg);font-weight:600}
+main{flex:1;padding:20px;max-width:1100px}.v{display:none}.v.on{display:block}
+.card{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:14px}
+h2{margin:0 0 10px;font-size:17px;color:var(--p)}h3{margin:0 0 8px;font-size:14px}
+input,select{padding:7px;border:1px solid var(--b);border-radius:6px;background:var(--bg);color:var(--t)}
+.btn{padding:8px 16px;border:0;border-radius:6px;background:var(--a);color:#fff;font-weight:600;cursor:pointer}.btn.s{background:var(--m)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:8px 0}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.bar{display:flex;align-items:center;gap:8px;font-size:12px;margin:3px 0}.bar span:first-child{width:46%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar i{display:block;height:12px;background:var(--a);border-radius:3px}.bar b{font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:12px}td,th{border-bottom:1px solid var(--b);padding:5px;text-align:left;vertical-align:top}
+#log{font-size:12px;color:var(--m);max-height:120px;overflow:auto;white-space:pre-wrap}.warn{color:#b45309;font-weight:600}
+.pg{height:8px;background:var(--b);border-radius:4px;overflow:hidden}.pg i{display:block;height:100%;width:0;background:var(--a)}
+</style></head><body>
+<nav><h1>Scholar Review Dashboard</h1>
+<button class="on" data-v="s">1. Search &amp; Collect</button><button data-v="i">2. Technology Infrastructure</button>
+<button data-v="w">3. Words, Abbreviations &amp; Correlations</button><button data-v="t">4. Topic Modeling</button>
+<button data-v="d">5. Aligned Papers &amp; .bib Database</button>
+<p id="status" style="font-size:12px;color:var(--m)">Checking helper…</p></nav>
+<main>
+<section class="v on" id="v-s"><div class="card"><h2>Search Google Scholar &amp; collect results</h2>
+<div class="row"><label>Query <input id="q" size="42" value="solar irradiance PV power forecasting"></label>
+<label>From <input id="lo" type="number" value="2012" style="width:80px"></label><label>To <input id="hi" type="number" value="2026" style="width:80px"></label>
+<label>Max results <select id="mx"><option>50</option><option>100</option><option selected>200</option><option>500</option><option>1000</option><option value="custom">Custom…</option></select> <input id="mxc" type="number" min="1" value="2000" style="width:90px;display:none" title="Enter any number of results"></label></div>
+<details style="margin:6px 0"><summary style="cursor:pointer;font-weight:600;color:var(--p)">Advanced options (author, publication, phrase, exclusions…)</summary>
+<div class="row" style="margin-left:10px"><label>Author <input id="aAu" size="22" placeholder="e.g. Dazhi Yang"></label>
+<label>Publication <input id="aSo" size="22" placeholder="e.g. Solar Energy"></label>
+<label>Exact phrase <input id="aEp" size="20" placeholder="e.g. cloud motion"></label>
+<label>Any of these words <input id="aOq" size="20" placeholder="e.g. satellite sky-imager"></label>
+<label>Exclude words <input id="aEq" size="14" placeholder="e.g. wind"></label>
+<label>Min citations <input id="aCi" type="number" min="0" style="width:80px"></label>
+<label><input type="checkbox" id="aTi"> words in title only</label> <label><input type="checkbox" id="aRv"> review articles only</label></div></details>
+<p style="font-size:12px;color:var(--m);margin:6px 0"><b>Query tips:</b> type the words to search for; Scholar requires all of them. Use quotes for an exact phrase (<code>"cloud motion"</code>), <code>OR</code> in capitals for alternatives (<code>irradiance OR insolation</code>) and a minus sign to exclude a word (<code>forecasting -wind</code>). <b>Advanced options</b> narrow the search to an author, a publication (journal), an exact phrase, alternative or excluded words, title-only matches, review articles, or a minimum number of citations. Scholar has no affiliation or country filter. Results are saved as <code>Scholar_Keyword_N_Mon_Year.bib</code>, using the query keyword most frequent in the results, the number of papers kept, and the month and year (e.g. <code>Scholar_Hydrogen_60_Nov_2026.bib</code>).</p><div class="row"><button class="btn" id="run">▶ Run search &amp; analysis</button><button class="btn s" id="stop">⏹ Stop</button></div>
+<div class="pg"><i id="pg"></i></div><div id="log"></div></div>
+<div class="card"><h2>Method (mirrors the review study)</h2><p>Q1: journals, authors and influential publications from the top Scholar results (counting, citation outliers per year by the 1.5×IQR rule). Q2: frequent abbreviations (neighbourhood-search matching) and words (term frequency, TF-IDF, n-grams, correlations). Q3: topics via LDA. Papers are then ranked by an alignment score and the best are saved as a <code>.bib</code> database.</p>
+<p class="warn">Scholar has no API and may show a CAPTCHA. If so, open Scholar once in a normal tab, solve it, and press Run again; collected results are kept and the search resumes.</p></div></section>
+<section class="v" id="v-i"><div class="g"><div class="card"><h3>Top journals &amp; conferences</h3><div id="jr"></div></div><div class="card"><h3>Top authors</h3><div id="au"></div></div></div>
+<div class="g"><div class="card"><h3>Publications per year</h3><div id="yr"></div></div><div class="card"><h3>Influential papers (citation outliers within each year)</h3><div id="ol"></div></div></div></section>
+<section class="v" id="v-w"><div class="g"><div class="card"><h3>Top terms (TF-IDF)</h3><div id="tf"></div></div><div class="card"><h3>Top bigrams</h3><div id="bg"></div></div></div>
+<div class="g"><div class="card"><h3>Frequent abbreviations</h3><div id="ab"></div></div>
+<div class="card"><h3>Words correlated with <input id="cw" value="cloud" size="10"></h3><div id="co"></div></div></div></section>
+<section class="v" id="v-t"><div class="card"><h2>Topic modeling (LDA)</h2><div class="row"><label>Topics <select id="k"><option>4</option><option selected>6</option><option>8</option><option>10</option></select></label><button class="btn" id="relda">Re-run LDA</button></div><div id="tp" class="g"></div></div></section>
+<section class="v" id="v-d"><div class="card"><h2>Most aligned papers → .bib database</h2>
+<div class="row"><label>Keep top <input id="tn" type="range" min="1" max="200" value="60" style="vertical-align:middle"> <b id="tnv">60</b></label>
+<label><input type="checkbox" id="off"> fetch official Scholar BibTeX (slow)</label><button class="btn" id="save">💾 Save .bib database</button></div>
+<div class="row" id="sv" style="color:var(--m)"></div><table id="dt"></table></div></section>
+</main>
+<script>
+const $=id=>document.getElementById(id),Q=s=>[...document.querySelectorAll(s)];
+let docs=[],helper=false,stopF=false,M={},sel=[];
+Q('nav button').forEach(b=>b.onclick=()=>{Q('nav button,.v').forEach(e=>e.classList.remove('on'));b.classList.add('on');$('v-'+b.dataset.v).classList.add('on')});
+const log=t=>{$('log').textContent+=t+'\n';$('log').scrollTop=1e9},sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const api=async(p,o)=>(await fetch(p,o)).json();
+const STOP=new Set('the and for with from that this are was were have has been into using use used based which their than also can such not but its our these those between more most over under via within both each one two new use study paper results approach method methods show shows model models data analysis proposed present presented however while when where other may well'.split(' '));
+const stem=w=>w.length>5?w.replace(/(ing|ed|es|s)$/,''):w;
+const tok=t=>(t.toLowerCase().match(/[a-z]{3,}/g)||[]).filter(w=>!STOP.has(w)).map(stem);
+const bars=(a,f=x=>x)=>{const m=Math.max(...a.map(x=>x[1]),1);return a.map(([k,v])=>`<div class="bar"><span title="${k}">${k}</span><i style="width:${40*v/m}%"></i><b>${f(v)}</b></div>`).join('')||'<small>No data yet</small>'};
+const topN=(o,n)=>Object.entries(o).sort((a,b)=>b[1]-a[1]).slice(0,n);
+const cnt=(a)=>a.reduce((o,k)=>(k&&(o[k]=(o[k]||0)+1),o),{});
+// ---------- search ----------
+async function run(){
+  stopF=false;const q=$('q').value,mx=getMax();$('log').textContent='';
+  const ex=[['as_sauthors','aAu'],['as_publication','aSo'],['as_epq','aEp'],['as_oq','aOq'],['as_eq','aEq']].map(([k,i])=>$(i).value.trim()?`&${k}=${encodeURIComponent($(i).value.trim())}`:'').join('')+($('aTi').checked?'&as_occt=title':'')+($('aRv').checked?'&as_rr=1':''),
+    minC=+$('aCi').value||0,sig=[q,ex,$('lo').value,$('hi').value].join('|');
+  if(sig!==window.lastSig){docs=[];window.lastSig=sig}   // new search -> start fresh; same search -> resume after CAPTCHA
+  if(!q.trim()&&!ex){log('Enter a query or at least one advanced option.');return}
+  if(!helper){log('Helper not running. Start start_dashboard.bat / .sh (see README) to search Scholar.');return}
+  while(docs.length<mx&&!stopF){
+    const r=await api(`/api/search?q=${encodeURIComponent(q)}&start=${docs.length}&lo=${$('lo').value}&hi=${$('hi').value}${ex}`);
+    if(r.captcha){log('⚠ Google Scholar asked for a CAPTCHA. Open https://scholar.google.com in a tab, solve it, then press Run to resume.');break}
+    if(!r.items.length){log('No results parsed. '+(r.note||'End of results.'));break}
+    const seen=new Set(docs.map(d=>d.title));r.items.forEach(d=>{if(!seen.has(d.title)&&d.cites>=minC)docs.push(d)});
+    $('pg').style.width=100*docs.length/mx+'%';log(`Collected ${docs.length}/${mx}`);
+    await sleep(4000+Math.random()*4000);
+  }
+  if(docs.length){mine();log('Analysis updated – see the tabs on the left.')}
+}
+// ---------- mining ----------
+const yearsAgo=y=>Math.max(1,2026-y+1);
+function mine(){
+  const T=docs.map(d=>tok(d.title+' '+d.snippet)),N=docs.length,df={};
+  T.forEach(t=>new Set(t).forEach(w=>df[w]=(df[w]||0)+1));
+  const idf=w=>Math.log(N/(df[w]||1)),vec=T.map(t=>{const c=cnt(t),v={};for(const w in c)if(df[w]>1)v[w]=c[w]*idf(w);return v});
+  const cen={};vec.forEach(v=>{for(const w in v)cen[w]=(cen[w]||0)+v[w]/N});
+  const nrm=v=>Math.sqrt(Object.values(v).reduce((s,x)=>s+x*x,0))||1,nc=nrm(cen);
+  const qs=new Set(tok($('q').value)),mc=Math.max(...docs.map(d=>Math.log(1+d.cites/yearsAgo(d.year))),1);
+  docs.forEach((d,i)=>{const v=vec[i];let dot=0;for(const w in v)dot+=v[w]*(cen[w]||0);
+    const cos=dot/(nrm(v)*nc),cov=[...qs].filter(w=>T[i].includes(w)).length/(qs.size||1);
+    d.score=0.5*cos+0.3*cov+0.2*Math.log(1+d.cites/yearsAgo(d.year))/mc});
+  const tf={};vec.forEach(v=>{for(const w in v)tf[w]=(tf[w]||0)+v[w]});
+  const bg={};T.forEach(t=>{for(let i=0;i<t.length-1;i++)bg[t[i]+' '+t[i+1]]=(bg[t[i]+' '+t[i+1]]||0)+1});
+  const ab={};docs.forEach(d=>{const s=d.title+'. '+d.snippet,re=/((?:[A-Za-z][\w-]*\s+){1,7})\(([A-Z][A-Za-z]{1,7})s?\)/g;let m;
+    while((m=re.exec(s))){const sf=m[2],ws=m[1].trim().split(/\s+/);for(let n=sf.length;n<=Math.min(ws.length,sf.length+2);n++){const lf=ws.slice(-n);
+      if(lf[0][0].toUpperCase()!==sf[0])continue;let j=0,t=lf.join('').toUpperCase();for(const ch of sf.toUpperCase())j=t.indexOf(ch,j)+1||1e9;
+      if(j<1e9){const k=sf+' = '+lf.join(' ').toLowerCase();ab[k]=(ab[k]||0)+1;break}}}});
+  M={T,df,N,tf,bg,ab};
+  const ys=cnt(docs.map(d=>d.year||'')),vn=cnt(docs.map(d=>d.venue)),au=cnt(docs.flatMap(d=>d.authors.split(/,\s*/).map(a=>a.replace(/…/,'').trim()).filter(a=>a.length>2)));
+  $('jr').innerHTML=bars(topN(vn,20));$('au').innerHTML=bars(topN(au,20));$('yr').innerHTML=bars(Object.entries(ys).sort());
+  const by={};docs.forEach(d=>(by[d.year]=by[d.year]||[]).push(d));let ol=[];
+  for(const y in by){const c=by[y].map(d=>d.cites).sort((a,b)=>a-b);if(c.length<4)continue;const q=p=>c[Math.floor(p*(c.length-1))],lim=q(.75)+1.5*(q(.75)-q(.25));
+    by[y].forEach(d=>d.cites>lim&&ol.push(d))}
+  $('ol').innerHTML='<table>'+ol.sort((a,b)=>b.cites-a.cites).slice(0,20).map(d=>`<tr><td>${d.year}</td><td>${d.title}</td><td>${d.cites}</td></tr>`).join('')+'</table>';
+  $('tf').innerHTML=bars(topN(tf,25),v=>v.toFixed(1));$('bg').innerHTML=bars(topN(bg,20).filter(x=>x[1]>1));
+  $('ab').innerHTML=bars(topN(ab,20));corr();lda();rank();
+}
+function corr(){const w=stem($('cw').value.toLowerCase().trim()),{T,df,N}=M;if(!df[w]){$('co').innerHTML='<small>Word not found</small>';return}
+  const x=T.map(t=>+t.includes(w)),mx=x.reduce((a,b)=>a+b)/N,r={};
+  for(const v in df){if(v===w||df[v]<3)continue;const y=T.map(t=>+t.includes(v)),my=df[v]/N;let c=0;for(let i=0;i<N;i++)c+=(x[i]-mx)*(y[i]-my);
+    const d=Math.sqrt(N*mx*(1-mx)*N*my*(1-my));if(d)r[v]=c/d}
+  $('co').innerHTML=bars(topN(r,20),v=>v.toFixed(2))}
+$('cw').onchange=()=>M.df&&corr();
+function lda(){const K=+$('k').value,{T,df}=M,V=Object.keys(df).filter(w=>df[w]>=3).slice(0,800),id=Object.fromEntries(V.map((w,i)=>[w,i]));
+  let s=12345;const rnd=()=>(s=(s*1664525+1013904223)>>>0)/4294967296;
+  const D=T.map(t=>t.filter(w=>w in id).map(w=>id[w])),nd=D.map(()=>Array(K).fill(0)),nw=V.map(()=>Array(K).fill(0)),nk=Array(K).fill(0);
+  const Z=D.map((d,i)=>d.map(w=>{const z=Math.floor(rnd()*K);nd[i][z]++;nw[w][z]++;nk[z]++;return z}));
+  for(let it=0;it<120;it++)D.forEach((d,i)=>d.forEach((w,j)=>{let z=Z[i][j];nd[i][z]--;nw[w][z]--;nk[z]--;
+    const p=[];let sum=0;for(let k=0;k<K;k++){sum+=(nd[i][k]+.1)*(nw[w][k]+.01)/(nk[k]+.01*V.length);p.push(sum)}
+    const u=rnd()*sum;z=p.findIndex(x=>x>=u);Z[i][j]=z;nd[i][z]++;nw[w][z]++;nk[z]++}));
+  docs.forEach((d,i)=>{d.topic=nd[i].indexOf(Math.max(...nd[i]))});
+  $('tp').innerHTML=Array.from({length:K},(_,k)=>{const ws=V.map((w,i)=>[w,nw[i][k]]).sort((a,b)=>b[1]-a[1]).slice(0,8).map(x=>x[0]),ds=docs.filter(d=>d.topic===k),
+    my=ds.length?Math.round(ds.reduce((a,d)=>a+d.year,0)/ds.length):'–';
+    return `<div class="card"><h3>Topic ${k+1}: ${ws.slice(0,3).join(' / ')}</h3><p>${ws.join(', ')}</p><small>${ds.length} papers · mean year ${my}</small></div>`}).join('')}
+$('relda').onclick=()=>docs.length&&lda();
+// ---------- ranking & bib ----------
+const last=a=>(a.trim().split(/\s+/).pop()||'x').replace(/\W/g,'');
+function bibKey(d){return last(d.authors.split(',')[0])+d.year+(d.title.split(/\s+/).find(w=>w.length>3)||'').replace(/\W/g,'')}
+function toBib(d){if(d.bib)return d.bib.trim();const conf=/conf|proceed|symposium|meeting|workshop/i.test(d.venue),f=(k,v)=>v?`  ${k} = {${String(v).replace(/[{}]/g,'')}},\n`:'';
+  return `@${conf?'inproceedings':'article'}{${bibKey(d)},\n${f('title',d.title)}${f('author',d.authors.split(/,\s*/).join(' and '))}${f(conf?'booktitle':'journal',d.venue)}${f('year',d.year||'')}${f('abstract',d.snippet)}${f('note','Cited by '+d.cites+' (Google Scholar)')}${f('url',d.url)}}`}
+function rank(){syncTn();sel=[...docs].sort((a,b)=>b.score-a.score).slice(0,+$('tn').value);
+  $('dt').innerHTML='<tr><th>#</th><th>Title</th><th>Venue</th><th>Year</th><th>Cites</th><th>Score</th></tr>'+sel.map((d,i)=>`<tr><td>${i+1}</td><td><a href="${d.url}" target="_blank">${d.title}</a><br><small>${d.authors}</small></td><td>${d.venue}</td><td>${d.year}</td><td>${d.cites}</td><td>${d.score.toFixed(2)}</td></tr>`).join('')}
+const getMax=()=>$('mx').value==='custom'?Math.max(1,parseInt($('mxc').value)||100):+$('mx').value;
+function syncTn(){const m=docs.length||getMax(),t=$('tn');t.max=m;if(+t.value>m)t.value=m;$('tnv').textContent=t.value}
+$('mx').onchange=()=>{$('mxc').style.display=$('mx').value==='custom'?'inline-block':'none';syncTn()};$('mxc').oninput=syncTn;syncTn();
+$('tn').oninput=()=>{$('tnv').textContent=$('tn').value;docs.length&&rank()};
+function kwName(){const GEN=new Set('overview review analysis study approach technologies technology using based production systems system research recent advances introduction'.split(' '));
+  const ws=($('q').value.match(/[A-Za-z]{4,}/g)||[]).filter(w=>!GEN.has(w.toLowerCase())&&!STOP.has(w.toLowerCase()));
+  let b=ws[0],bd=-1;ws.forEach(w=>{const d=(M.df||{})[stem(w.toLowerCase())]||0;if(d>bd){bd=d;b=w}});
+  if(!b&&M.tf&&Object.keys(M.tf).length)b=topN(M.tf,1)[0][0];
+  b=(b||'Search').replace(/[^A-Za-z0-9]/g,'');return b[0].toUpperCase()+b.slice(1).toLowerCase()}
+async function save(){if(!sel.length)return;const d0=new Date(),name=`Scholar_${kwName()}_${sel.length}_${d0.toLocaleString('en',{month:'short'})}_${d0.getFullYear()}.bib`;
+  if($('off').checked&&helper)for(const [i,d] of sel.entries()){$('sv').textContent=`Fetching official BibTeX ${i+1}/${sel.length}…`;
+    const r=await api('/api/bibtex?cid='+d.cid);if(r.captcha){$('sv').textContent='CAPTCHA – saved the rest from metadata.';break}if(r.bib)d.bib=r.bib;await sleep(3500+Math.random()*3000)}
+  const txt=sel.map(toBib).join('\n\n')+'\n';
+  if(helper){await api('/api/save?name='+name,{method:'POST',body:txt});$('sv').textContent=`✔ Saved ${sel.length} entries to ${name} in the dashboard folder.`}
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/plain'}));a.download=name;a.click()}
+$('save').onclick=save;
+// ---------- load saved .bib ----------
+function parseBib(t){return t.split(/\n@/).filter(x=>/title/i.test(x)).map(e=>{const g=k=>((e.match(new RegExp(k+'\\s*=\\s*[{"]([\\s\\S]*?)[}"],?\\s*\\n','i'))||[])[1]||'').replace(/\s+/g,' ').trim();
+  const c=g('note').match(/(\d+)/);return{cid:'',title:g('title'),authors:g('author').split(' and ').join(', '),venue:g('journal')||g('booktitle'),year:+g('year')||0,snippet:g('abstract'),cites:c?+c[1]:0,url:g('url')}})}
+async function loadSaved(){if(!helper)return false;const L=(await api('/api/bibs')).filter(n=>/\.bib$/i.test(n));if(!L.length)return false;
+  const mo='janfebmaraprmayjunjulaugsepoctnovdec',sc=n=>(+(n.match(/20\d\d/)||[0])[0])*100+(mo.indexOf((n.toLowerCase().match(/[a-z]{3}(?=_\d{4})/)||['zzz'])[0])/3+1),f=L.sort((a,b)=>sc(b)-sc(a))[0];
+  docs=parseBib(await (await fetch(encodeURI(f))).text());log('Loaded '+f+' ('+docs.length+' entries)');if(docs.length)mine();return docs.length>0}
+$('run').onclick=run;$('stop').onclick=()=>stopF=true;
+fetch('/api/ping').then(r=>r.json()).then(()=>{helper=true;$('status').textContent='● Helper connected';loadSaved()}).catch(()=>{$('status').textContent='○ Helper not running – start_dashboard.bat/.sh'});
+</script></body></html>
