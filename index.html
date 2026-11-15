@@ -17,7 +17,9 @@ input,select{padding:7px;border:1px solid var(--b);border-radius:6px;background:
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:8px 0}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
 .bar{display:flex;align-items:center;gap:8px;font-size:12px;margin:3px 0}.bar span:first-child{width:46%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bar i{display:block;height:12px;background:var(--a);border-radius:3px}.bar b{font-weight:600}
-table{border-collapse:collapse;width:100%;font-size:12px}td,th{border-bottom:1px solid var(--b);padding:5px;text-align:left;vertical-align:top}
+table{border-collapse:collapse;width:100%;font-size:12px}td,th{border-bottom:1px solid var(--b);padding:6px;text-align:left;vertical-align:top}
+th span.sort-btns{display:inline-flex;flex-direction:column;font-size:9px;line-height:9px;margin-left:5px;vertical-align:middle;cursor:pointer}
+th span.sort-btns b:hover{color:var(--a)}
 #log{font-size:12px;color:var(--m);max-height:120px;overflow:auto;white-space:pre-wrap}.warn{color:#b45309;font-weight:600}
 .pg{height:8px;background:var(--b);border-radius:4px;overflow:hidden}.pg i{display:block;height:100%;width:0;background:var(--a)}
 </style></head><body>
@@ -28,7 +30,7 @@ table{border-collapse:collapse;width:100%;font-size:12px}td,th{border-bottom:1px
 <p id="status" style="font-size:12px;color:var(--m)">Checking helper…</p></nav>
 <main>
 <section class="v on" id="v-s"><div class="card"><h2>Search OpenAlex &amp; collect results</h2>
-<div class="row"><label>Query <input id="q" size="42" value='"game theory" AND ("electricity market" OR "energy market" OR "integrated energy system" OR "energy management")'></label>
+<div class="row"><label>Query <input id="q" size="42" value="solar irradiance PV power forecasting"></label>
 <label>From <input id="lo" type="number" value="2012" style="width:80px"></label><label>To <input id="hi" type="number" value="2026" style="width:80px"></label>
 <label>Max results <select id="mx"><option>50</option><option>100</option><option selected>200</option><option>500</option><option>1000</option><option value="custom">Custom…</option></select> <input id="mxc" type="number" min="1" value="2000" style="width:90px;display:none" title="Enter any number of results"></label></div>
 <details style="margin:6px 0"><summary style="cursor:pointer;font-weight:600;color:var(--p)">Advanced options (author, affiliation, publication, country…)</summary>
@@ -43,7 +45,10 @@ table{border-collapse:collapse;width:100%;font-size:12px}td,th{border-bottom:1px
 <div class="card"><h2>Method (mirrors the review study)</h2><p>Q1: journals, authors and influential publications from the top OpenAlex results (counting, citation outliers per year by the 1.5×IQR rule). Q2: frequent abbreviations (neighbourhood-search matching) and words (term frequency, TF-IDF, n-grams, correlations). Q3: topics via LDA. Papers are then ranked by an alignment score and the best are saved as a <code>.bib</code> database.</p>
 <p>Data come from the free OpenAlex API: the most relevant works for your query with abstracts, citation counts and venues. Results are saved as <code>OpenAlex_Keyword_N_Mon_Year.bib</code>, using the query keyword most frequent in the results, the number of papers kept and the month and year (e.g. <code>OpenAlex_Hydrogen_60_Nov_2026.bib</code>).</p></div></section>
 <section class="v" id="v-i"><div class="g"><div class="card"><h3>Top journals &amp; conferences</h3><div id="jr"></div></div><div class="card"><h3>Top authors</h3><div id="au"></div></div></div>
-<div class="g"><div class="card"><h3>Publications per year</h3><div id="yr"></div></div><div class="card"><h3>Influential papers (citation outliers within each year)</h3><div id="ol"></div></div></div></section>
+<div class="g"><div class="card"><h3>Top First Authors</h3><div id="fau"></div></div><div class="card"><h3>Top First Author Affiliations</h3><div id="fin"></div></div></div>
+<div class="g"><div class="card"><h3>Publications per year</h3><div id="yr"></div></div><div class="card"><h3>Influential papers (citation outliers within each year)</h3><div id="ol"></div></div></div>
+<div class="g"><div class="card"><h3>Publications by Type</h3><div id="pty"></div></div><div class="card"><h3>Top Countries</h3><div id="fco"></div></div></div>
+<div class="g"><div class="card"><h3>Citation Distribution Brackets</h3><div id="fci"></div></div><div class="card"><h3>Top Funding Agencies</h3><div id="ffu"></div></div></div></section>
 <section class="v" id="v-w"><div class="g"><div class="card"><h3>Top terms (TF-IDF)</h3><div id="tf"></div></div><div class="card"><h3>Top bigrams</h3><div id="bg"></div></div></div>
 <div class="g"><div class="card"><h3>Frequent abbreviations</h3><div id="ab"></div></div>
 <div class="card"><h3>Words correlated with <input id="cw" value="cloud" size="10"></h3><div id="co"></div></div></div></section>
@@ -56,6 +61,7 @@ table{border-collapse:collapse;width:100%;font-size:12px}td,th{border-bottom:1px
 <script>
 const $=id=>document.getElementById(id),Q=s=>[...document.querySelectorAll(s)];
 let docs=[],helper=false,stopF=false,M={},sel=[];
+let sortCol='score', sortAsc=false; // default sort state
 Q('nav button').forEach(b=>b.onclick=()=>{Q('nav button,.v').forEach(e=>e.classList.remove('on'));b.classList.add('on');$('v-'+b.dataset.v).classList.add('on')});
 const log=t=>{$('log').textContent+=t+'\n';$('log').scrollTop=1e9},sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const api=async(p,o)=>(await fetch(p,o)).json();
@@ -79,12 +85,32 @@ async function run(){
   if($('aTy').value)fl.push('type:'+$('aTy').value);if($('aCi').value)fl.push('cited_by_count:>'+(+$('aCi').value-1));
   if(!q.trim()&&fl.length<=3){log('Enter a query or at least one advanced option.');return}
   for(let p=1;docs.length<mx&&!stopF;p++){
-    const u=`https://api.openalex.org/works?${q.trim()?'search='+encodeURIComponent(q)+'&':''}filter=${fl.join(',')}&per-page=100&page=${p}&select=id,display_name,publication_year,cited_by_count,authorships,primary_location,abstract_inverted_index,doi`;
+    const u=`https://api.openalex.org/works?${q.trim()?'search='+encodeURIComponent(q)+'&':''}filter=${fl.join(',')}&per-page=100&page=${p}&select=id,display_name,publication_year,cited_by_count,authorships,primary_location,abstract_inverted_index,doi,type`;
     let r;try{const x=await fetch(u);if(!x.ok)throw new Error('HTTP '+x.status);r=await x.json()}catch(e){log('⚠ OpenAlex request failed: '+e.message+' (check internet connection; then press Run again)');break}
     if(!r.results.length){log('End of results.');break}
-    r.results.forEach(w=>docs.length<mx&&docs.push({cid:w.id,title:w.display_name||'',authors:(w.authorships||[]).map(a=>a.author.display_name).join(', '),
-      venue:(w.primary_location&&w.primary_location.source&&w.primary_location.source.display_name)||'',year:w.publication_year||0,
-      snippet:unabs(w.abstract_inverted_index),cites:w.cited_by_count||0,url:w.doi||w.id}));
+    r.results.forEach(w=>{
+      const firstAuth = (w.authorships||[]).find(a => a.visual_order === 1 || a.author_position === 'first') || (w.authorships||[])[0];
+      const faName = firstAuth && firstAuth.author ? firstAuth.author.display_name : '';
+      const faInstObj = firstAuth && firstAuth.institutions && firstAuth.institutions[0];
+      const faInst = faInstObj ? faInstObj.display_name : '';
+      const faCountry = faInstObj && faInstObj.country_code ? faInstObj.country_code.toUpperCase() : '';
+      
+      docs.length<mx&&docs.push({
+        cid:w.id,
+        title:w.display_name||'',
+        authors:(w.authorships||[]).map(a=>a.author.display_name).join(', '),
+        firstAuthor: faName || 'Unknown',
+        firstAffil: faInst || 'Unknown Affiliation',
+        country: faCountry || 'Unknown',
+        venue:(w.primary_location&&w.primary_location.source&&w.primary_location.source.display_name)||'',
+        type:w.type||'article',
+        funders: ['Unspecified / None'],
+        year:w.publication_year||0,
+        snippet:unabs(w.abstract_inverted_index),
+        cites:w.cited_by_count||0,
+        url:w.doi||w.id
+      });
+    });
     $('pg').style.width=100*docs.length/mx+'%';log(`Collected ${docs.length}/${mx}`);
   }
   if(docs.length){mine();log('Analysis updated – see the tabs on the left.')}
@@ -109,7 +135,34 @@ function mine(){
       if(j<1e9){const k=sf+' = '+lf.join(' ').toLowerCase();ab[k]=(ab[k]||0)+1;break}}}});
   M={T,df,N,tf,bg,ab};
   const ys=cnt(docs.map(d=>d.year||'')),vn=cnt(docs.map(d=>d.venue)),au=cnt(docs.flatMap(d=>d.authors.split(/,\s*/).map(a=>a.replace(/…/,'').trim()).filter(a=>a.length>2)));
-  $('jr').innerHTML=bars(topN(vn,20));$('au').innerHTML=bars(topN(au,20));$('yr').innerHTML=bars(Object.entries(ys).sort());
+  const fau=cnt(docs.map(d=>d.firstAuthor).filter(a=>a&&a!=='Unknown'));
+  const fin=cnt(docs.map(d=>d.firstAffil).filter(a=>a&&a!=='Unknown Affiliation'));
+  const pty=cnt(docs.map(d=>d.type));
+  const fco=cnt(docs.map(d=>d.country).filter(c=>c&&c!=='Unknown'));
+  
+  // Citation brackets calculation
+  const cBrackets={ '0': 0, '1-10': 0, '11-50': 0, '51-100': 0, '100+': 0 };
+  docs.forEach(d=>{
+    const c=d.cites;
+    if(c===0) cBrackets['0']++;
+    else if(c<=10) cBrackets['1-10']++;
+    else if(c<=50) cBrackets['11-50']++;
+    else if(c<=100) cBrackets['51-100']++;
+    else cBrackets['100+']++;
+  });
+
+  const ffu=cnt(docs.flatMap(d=>d.funders).filter(f=>f&&f!=='Unspecified / None'));
+
+  $('jr').innerHTML=bars(topN(vn,20));
+  $('au').innerHTML=bars(topN(au,20));
+  $('fau').innerHTML=bars(topN(fau,20));
+  $('fin').innerHTML=bars(topN(fin,20));
+  $('yr').innerHTML=bars(Object.entries(ys).sort());
+  $('pty').innerHTML=bars(topN(pty,10));
+  $('fco').innerHTML=bars(topN(fco,20));
+  $('fci').innerHTML=bars(Object.entries(cBrackets));
+  $('ffu').innerHTML=bars(topN(ffu,20));
+
   const by={};docs.forEach(d=>(by[d.year]=by[d.year]||[]).push(d));let ol=[];
   for(const y in by){const c=by[y].map(d=>d.cites).sort((a,b)=>a-b);if(c.length<4)continue;const q=p=>c[Math.floor(p*(c.length-1))],lim=q(.75)+1.5*(q(.75)-q(.25));
     by[y].forEach(d=>d.cites>lim&&ol.push(d))}
@@ -138,10 +191,48 @@ $('relda').onclick=()=>docs.length&&lda();
 // ---------- ranking & bib ----------
 const last=a=>(a.trim().split(/\s+/).pop()||'x').replace(/\W/g,'');
 function bibKey(d){return last(d.authors.split(',')[0])+d.year+(d.title.split(/\s+/).find(w=>w.length>3)||'').replace(/\W/g,'')}
-function toBib(d){if(d.bib)return d.bib.trim();const conf=/conf|proceed|symposium|meeting|workshop/i.test(d.venue),f=(k,v)=>v?`  ${k} = {${String(v).replace(/[{}]/g,'')}},\n`:'';
+function toBib(d){if(d.bib)return d.bib.trim();const conf=/conf|proceed|symposium|meeting|workshop/i.test(d.venue),f=(k,v)=>v?`  ${k} = {${String(v).replace(/[{}]/g, '')}},\n`:'';
   return `@${conf?'inproceedings':'article'}{${bibKey(d)},\n${f('title',d.title)}${f('author',d.authors.split(/,\s*/).join(' and '))}${f(conf?'booktitle':'journal',d.venue)}${f('year',d.year||'')}${f('abstract',d.snippet)}${f('note','Cited by '+d.cites+' (OpenAlex)')}${f('url',d.url)}}`}
-function rank(){syncTn();sel=[...docs].sort((a,b)=>b.score-a.score).slice(0,+$('tn').value);
-  $('dt').innerHTML='<tr><th>#</th><th>Title</th><th>Venue</th><th>Year</th><th>Cites</th><th>Score</th></tr>'+sel.map((d,i)=>`<tr><td>${i+1}</td><td><a href="${d.url}" target="_blank">${d.title}</a><br><small>${d.authors}</small></td><td>${d.venue}</td><td>${d.year}</td><td>${d.cites}</td><td>${d.score.toFixed(2)}</td></tr>`).join('')}
+  
+function sortBy(col) {
+  if (sortCol === col) {
+    sortAsc = !sortAsc;
+  } else {
+    sortCol = col;
+    sortAsc = true; // default to ascending on new column click, or user preference
+  }
+  rank();
+}
+
+function rank(){
+  syncTn();
+  sel=[...docs].sort((a,b)=>{
+    let va = a[sortCol], vb = b[sortCol];
+    if(typeof va === 'string') va = va.toLowerCase();
+    if(typeof vb === 'string') vb = vb.toLowerCase();
+    if(va < vb) return sortAsc ? -1 : 1;
+    if(va > vb) return sortAsc ? 1 : -1;
+    return 0;
+  }).slice(0,+$('tn').value);
+
+  const mkArrow = (col) => `<span class="sort-btns"><b onclick="sortBy('${col}')">▲</b><b onclick="sortBy('${col}')">▼</b></span>`;
+
+  $('dt').innerHTML=`<tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Venue</th>
+    <th>Year ${mkArrow('year')}</th>
+    <th>Cites ${mkArrow('cites')}</th>
+    <th>Score ${mkArrow('score')}</th>
+  </tr>` + sel.map((d,i)=>`<tr>
+    <td>${i+1}</td>
+    <td><a href="${d.url}" target="_blank">${d.title}</a><br><small>${d.authors}</small></td>
+    <td>${d.venue}</td>
+    <td>${d.year}</td>
+    <td>${d.cites}</td>
+    <td>${d.score.toFixed(2)}</td>
+  </tr>`).join('');
+}
 const getMax=()=>$('mx').value==='custom'?Math.max(1,parseInt($('mxc').value)||100):+$('mx').value;
 function syncTn(){const m=docs.length||getMax(),t=$('tn');t.max=m;if(+t.value>m)t.value=m;$('tnv').textContent=t.value}
 $('mx').onchange=()=>{$('mxc').style.display=$('mx').value==='custom'?'inline-block':'none';syncTn()};$('mxc').oninput=syncTn;syncTn();
